@@ -1,0 +1,1025 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  color: #fff;
+  background: black;
+  line-height: 1.5;
+  font-family: "MyNotoSans", sans-serif; /*폰트는 변경 예정*/
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  letter-spacing: -0.05em;
+  overflow-x: hidden; /*가로스크롤 차단*/
+}
+
+header {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  position: relative;
+  /*position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;*/
+  z-index: 1000;
+
+  /*overflow: hidden; 이거 쓰면 햄버거 메뉴 펼쳣을 때 안 나옴 */
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.header-inner li {
+  /*position: relative;*/
+  list-style: none;
+}
+
+.header-inner a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-inner {
+  max-width: 1740px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* .header-left {
+    flex: 0 0 auto;
+  } 로고 폭만큼 
+  .header-right {
+    flex: 0 0 auto;
+  } 유틸 폭만큼
+  .header-center {
+    flex: 1 1 auto;
+  } 남은 공간 모두 차지 */
+}
+/*로고랑 유틸메뉴만 플렉스로 다루고 nav는 position: absolute로 띄워서 헤더 크기만큼 2뎁스랑 맞추기*/
+.header-logo {
+  width: 120px;
+  position: relative;
+  z-index: 10; /* 클릭 우선순위 높이기 */
+}
+
+.header-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* header-logo END */
+
+/* 햄버거 버튼 */
+.hamburger {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 24px;
+    height: 18px;
+    border: 0;
+    background: none;
+    position: relative;
+    z-index: 9999;
+    top: 0px;
+    left: 8px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 100%;
+    height: 2px;
+    background-color: #ff6600;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}
+
+/* 햄버거 버튼 끝 */
+
+.gnb {
+  /*background-color: pink;*/
+  position: absolute;
+  width: 100%;
+  left: 0%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+}
+.depth1 {
+  /*position: relative; 2뎁스 기준점을 안줘야 헤더에 잡힘*/
+  width: 100%;
+  margin-left: 250px;
+  /*background-color: ivory;*/
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.depth1 li {
+  transition: 0.3s ease;
+}
+
+.depth1 li:hover .depth2-gnb {
+  opacity: 1;
+  visibility: visible;
+  /*transform: translateY(0); // 방향제거*/
+}
+
+.depth1 a {
+  padding: 60px 0; /*패딩 위아래 넓혀서 호버시 끊김 해결*/
+  transition: 0.3s ease;
+  /*background-color: aqua;*/
+}
+
+.depth1 a:hover {
+  /*글자색은 a에다 줘야함*/
+  color: #ff6600;
+}
+
+.depth2-gnb {
+  /*덩어리*/
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  /* top: 80px로 덩어리 위치 조정*/
+  top: 81px;
+  left: 0;
+  padding: 40px 0;
+
+  opacity: 0;
+  visibility: hidden;
+  /*transform: translateY(10px);*/
+  transition: all 0.4s ease;
+  /* display: none 대신 opacity와 translate를 줘서 애니메이션 효과를 만듦*/
+}
+
+.depth2.depth2-1 {
+  margin-left: 250px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  /*background-color: azure;*/
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.depth2.depth2-2 {
+  margin-left: 372px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  /*background-color: azure;*/
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.depth2.depth2-3 {
+  margin-left: 502px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  /*background-color: azure;*/
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.depth2.depth2-4 {
+  margin-left: 608px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  /*background-color: azure;*/
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* 헤더 메뉴 미디어쿼리 시작 */
+
+@media (max-width: 768px) {
+  .gnb {
+    display: none;
+    position: fixed; /*position:absolute는 헤더 기준이라 안됨*/
+    z-index: 999;
+    inset: 0 0 0 auto;
+    width: 50%;
+    height: 100vh;
+    background-color: #fff;
+    padding: 20px 24px;
+    transform: translateY(0);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+  }
+
+  .depth1 {
+    align-items: flex-start;
+  }
+
+  .gnb .depth1 li a {
+    color: black;
+  }
+
+  .gnb.active {
+    display: block;
+  }
+
+  .gnb .depth1 {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    position: static;
+    z-index: 1001;
+    left: 23px;
+    top: 100px;
+    margin-top: 100px;
+    margin-left: 0px;
+  }
+
+  .depth1 a {
+    padding: 0px 0;
+    text-align: start;
+  }
+
+  .depth2-gnb {
+    display: none;
+  }
+}
+
+/* header-nav END */
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  /*nav가 막고 있어서 z-index를 올려야 a링크가 작동됨*/
+  position: relative;
+  z-index: 10;
+}
+
+.header-right a {
+  color: rgba(255, 255, 255, 0.6);
+  padding: 24px 0;
+  transition: 0.3s ease;
+}
+
+.header-right a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.header-utility-long {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: bold;
+}
+
+.header-utility-long li.divider {
+  position: relative;
+  padding-right: 16px;
+}
+
+.header-utility-long li.divider::after {
+  position: absolute;
+  z-index: 11;
+  content: "";
+  width: 1px;
+  height: 12px;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .header-right {
+    display: none;
+  }
+}
+
+/* header-utility END*/
+
+.section-m {
+  z-index: 1; /* 비디오 위로 올라오게 */
+  margin-top: 85vh; /* 중요: 비디오 높이만큼 공간 확보해서 나타나게 함 */
+}
+
+.section-video {
+  /* position: absolute;를 사용해서 동영상을 헤더까지 올림*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+  z-index: 0; /*비디오가 섹션1 뒤로가게*/
+}
+.section-video video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/*@media (max-width: 768px) {
+  .section-video {
+    padding: 0 24px;
+  }
+ } */
+
+aside {
+  width: 120px;
+  height: 450px;
+  position: fixed;
+  z-index: 1000;
+  right: 20px;
+  top: 140px;
+
+  border-radius: 10px;
+}
+
+.aside-flex {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.aside li {
+  list-style: none;
+  width: 80px;
+  height: 80px;
+}
+
+.aside li img {
+  border-radius: 50%;
+  border: 3px solid transparent;
+}
+
+.aside li img:hover {
+  border: 3px solid #ff6600;
+}
+
+@media (max-width: 768px) {
+  .aside {
+    display: none;
+  }
+}
+/*섹션1 - hero END */
+
+.section-p {
+  width: 100%;
+  padding: 100px 0;
+  /*임시*/
+  /*margin-bottom: 10px;*/
+  /*background: PINK;*/
+}
+
+.section-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+  .section-inner {
+    width: 80%; /*섹션별로 가로너비가 달라서 반응형은 미디어쿼리로 조정해야함 */
+    padding: 0 16px;
+  }
+}
+
+.section2-cards {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.section2-card {
+  position: relative; /*개별 카드 기준점*/
+  width: 290px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 0px 40px;
+  /*border: 5px solid transparent;*/
+  border-top: 8px solid #ff6600;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.section2-card-after {
+  animation: floatY 1s ease-in-out infinite;
+} /* 가상요소선택자 붙은 카드 하나에만 애니메이션 효과 주기*/
+
+@keyframes floatY {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+.section2-card-after::after {
+  position: absolute;
+  content: "UPCOMING!";
+  top: -10%;
+  left: 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.section2-card:hover {
+  border-bottom: 5px solid #ff6600;
+  border-left: 5px solid #ff6600;
+  border-right: 5px solid #ff6600;
+}
+
+.section2-card-title {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 40px 0;
+}
+.section2-card-title span {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 24px;
+}
+
+.section2-card-title h3 {
+  color: #ff6600;
+  font-size: 1.2rem;
+}
+
+.section2-card-imgages {
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.section2-card-imgages span {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.section2-card-img {
+  width: 100px;
+  height: 100px;
+}
+
+.section2-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.section2-card-img .hanwha-logo {
+  width: 70%;
+  height: 85%;
+}
+
+@media (max-width: 768px) {
+  .section2-cards {
+    flex-direction: column;
+    gap: 80px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* section2 END */
+
+.flow-wrapper {
+  overflow: hidden; /*얘가 잇음 둥근모서리가 안 먹음 근데 없으면 옆으로 다 튀어나옴*/
+  width: 100%;
+  position: relative; /* 나중에 버튼이나 다른 요소의 기준점이 되어줄 수 있음*/
+}
+
+.slide-list {
+  width: max-content; /*튕김 방지*/
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  animation: flowSlide 60s linear /*일정한속도*/ infinite;
+  /*이미지가 개별적으로 움직이는 게 아니라 전체줄이 흘러가는 구조임*/
+}
+
+.slide-item {
+  flex: 0 0 auto; /*고정된 위드스 너비만큼만 가져가라*/
+  width: 600px;
+  margin-right: 20px;
+  list-style: none;
+}
+
+.slide-item img {
+  display: block;
+  width: 100%;
+  height: 50px;
+  object-fit: contain;
+  /*border-radius: 20px;*/
+  opacity: 0.6;
+  transition: opacity 0.7s ease;
+}
+
+/*사진 높낮이 조절, 근데 모서리 둥글게가 안 먹힘,,*/
+.slide-item:nth-child(1) img {
+  transform: translateY(80px);
+}
+.slide-item:nth-child(2) img {
+  transform: translateY(-100px);
+}
+.slide-item:nth-child(3) img {
+  transform: translateY(80px);
+}
+.slide-item:nth-child(4) img {
+  transform: translateY(-100px);
+}
+.slide-item:nth-child(5) img {
+  transform: translateY(80px);
+}
+.slide-item:nth-child(6) img {
+  transform: translateY(-100px);
+}
+.slide-item:nth-child(7) img {
+  transform: translateY(80px);
+}
+.slide-item:nth-child(8) img {
+  transform: translateY(-100px);
+}
+.slide-item:nth-child(9) img {
+  transform: translateY(80px);
+}
+.slide-item:nth-child(10) img {
+  transform: translateY(-100px);
+}
+.slide-item:nth-child(11) img {
+  transform: translateY(80px);
+}
+.slide-item:nth-child(12) img {
+  transform: translateY(-100px);
+}
+.slide-item:nth-child(13) img {
+  transform: translateY(80px);
+}
+.slide-item:nth-child(14) img {
+  transform: translateY(-100px);
+}
+.slide-item:nth-child(15) img {
+  transform: translateY(80px);
+}
+.slide-item:nth-child(16) img {
+  transform: translateY(-100px);
+}
+
+.slide-item img:hover {
+  opacity: 1;
+}
+
+@keyframes flowSlide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.btn-box {
+  /* 공통 버튼 */
+  width: 100%;
+}
+
+.btn {
+  /*박스관련*/
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+  padding: 24px 16px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin-top: 40px;
+  /*글자관련*/
+  text-align: center;
+  /*호버효과 관련*/
+  position: relative;
+  transition: color 0.4s ease;
+  z-index: 0;
+  overflow: hidden;
+}
+
+a.btn::before {
+  /*가상요소선택자로 버튼 배경색 차오르게 만들기*/
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ff6600;
+  z-index: -1;
+  width: 0; /* 시작은 0 */
+  height: 100%;
+  transition: width 0.4s ease; /*스르르 효과의 진범*/
+}
+
+a.btn:hover::before {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    width: 150px;
+    padding: 16px 8px;
+  }
+}
+
+/* section2 END */
+
+.news-boxs {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.news-box {
+  flex: 1 1 0; /* 남는 공간을 똑같이 나눠가짐 // flex: 0 0 auto;는 자기 내용 크기 그대로 유지*/
+  list-style: none;
+  height: 600px; /*임시값*/
+
+  /*이미지박스랑 텍스트박스 레이아웃*/
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 24px;
+}
+
+.news-box .news-box-img,
+.news-box .news-box-text {
+  /*이미지박스랑 텍스트 박스 남는 공간 똑같이 나눠가짐*/
+  width: 100%;
+  flex: 1 1 0;
+  overflow: hidden; /* 두번째 사진 넘치는 거 해결*/
+}
+
+.news-box-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 10px;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+
+.news-box-img img:hover {
+  opacity: 1;
+}
+
+.news-box .news-box-text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.news-box-text h2 {
+  font-size: 1.5rem;
+}
+
+.news-box-text-after {
+  color: #fff;
+  text-decoration: none;
+}
+.news-box-text-opa {
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+
+.news-box-text-after {
+  width: 17%; /*가상요소 밑줄을 위해 고의적으로 줄임*/
+  display: inline-block;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.news-box-text-after:hover {
+  color: #ff6600;
+}
+
+.news-box-text-after::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0px;
+  height: 2px;
+  background-color: #ff6600;
+  transition: width 0.4s ease;
+}
+
+.news-box-text-after:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .news-boxs {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .news-box-text-after {
+    width: 22%;
+  }
+
+  .section-inner-media .btn-box {
+    margin: 0 auto;
+  }
+}
+
+/* TAP 메뉴 시작 */
+
+.tablist {
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 16px 0;
+  background-color: none;
+  border-radius: 10px;
+}
+
+.tab {
+  flex: 1 1 0;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 16px 0;
+  border-radius: 10px;
+} /* 클릭하면 색깔 바뀌는 것도 구현해야함 */
+
+/* 선택된 탭 배경색 바꾸기*/
+.tab.active {
+  background-color: #ff6600;
+}
+
+.grid-boxs {
+  /* margin: 0 auto;*/
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 40px; /* ✅ 첫 번째는 세로(y), 두 번째는 가로(x) 간격 */
+  padding: 0;
+  margin: 0 0 24px 0;
+  list-style: none;
+}
+
+.grid-boxs a {
+  text-decoration: none;
+}
+
+.grid-boxs li {
+  /*border-radius: 10px;*/
+  overflow: hidden;
+  background: black;
+  color: white;
+}
+
+/*이미지 박스와 이미지 영역*/
+.grid-boxs-img {
+  /*이미지박스 비율*/
+  aspect-ratio: 1 / 1; /* ✅ 가로:세로 = 1:1 (정사각형) 4/3, 16/9, 5/6있음*/
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.grid-boxs-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; /*잘릴 떄 기준*/
+  display: block;
+}
+
+/*텍스트박스와 텍스트 영역*/
+.grid-boxs-text {
+  /*text-align: center;*/
+  width: 300px; /*H3가 넘치면 말줌임표로 표시하기 위해 칸을 줄임 */
+  margin-top: 24px;
+  margin-bottom: 60px;
+}
+
+.grid-boxs-text h3 {
+  margin-bottom: 4px;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.6);
+
+  display: inline-block;
+  width: 100%; /* ✅ 너비 필수 (얼마나 표시할지 정해야 함) */
+  white-space: nowrap; /* ✅ 줄바꿈 안 함 */
+  overflow: hidden; /* ✅ 넘치는 텍스트 숨김 */
+  text-overflow: ellipsis; /* ✅ 말줄임표 (…) 표시 */
+}
+
+.grid-boxs-text p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 숨김 상태 (필터 시) */
+.is-hidden {
+  display: none !important;
+}
+
+/* 반응형 */
+
+@media (max-width: 767px) {
+  .grid-boxs {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* TAP 메뉴 끝 */
+
+/* footer 시작 */
+footer {
+  position: relative; /* .top 기준*/
+  width: 100%;
+  height: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-inner {
+  max-width: 1740px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  display: flex;
+  align-items: flex-end; /* 세로축 하단 정렬 */
+  justify-content: space-between;
+}
+/* top만 포지션으로 띄워서 위치 재조정*/
+
+.footer-box {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footer-box h2 {
+  letter-spacing: -0.06em;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.footer-box-span p {
+  display: flex;
+  flex-wrap: wrap; /* 길면 줄바꿈 */
+}
+.footer-box-span p span {
+  position: relative; /*가상요소선택자 기준점*/
+
+  font-size: 0.9rem;
+  padding-right: 16px; /*글자랑 가상요소 사이 여백*/
+  margin-right: 16px; /* span과 span 사이 여백*/
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+/* 마지막만 빼고, 오른쪽 여백 + 구분선 추가 */
+.footer-box-span p span:not(:last-child) {
+  padding-right: 16px;
+  margin-right: 16px;
+}
+
+.footer-box-span p span:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-nav li a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.footer-nav li a.footer-nav-color {
+  color: #ff6600;
+}
+
+.footer-nav li a:hover {
+  color: #ff6600;
+}
+
+@media (max-width: 767px) {
+  .footer-box-left {
+    display: none;
+  }
+}
+
+/*푸터박스 내부에 두번쨰 박스*/
+
+.footer-box-after {
+  width: 350px;
+  position: relative;
+}
+.footer-box-after-under {
+  display: inline-block;
+  text-align: left;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.footer-box-after::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-box p {
+  text-align: right;
+}
+
+.footer-box p small {
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.top {
+  position: absolute;
+  z-index: 1000;
+  top: 18%;
+  right: 5%;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  /*글씨 가로로 늘리기*/
+  display: inline-block; /* transform 적용하려면 필요! */
+  transform: scaleX(1.2); /* 1보다 크면 가로로 늘림 */
+  transform-origin: left center; /* 왼쪽 기준으로 늘어나게 */
+}
+
+.top::before {
+  content: "↑";
+  display: inline-block;
+}

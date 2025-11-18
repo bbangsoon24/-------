@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>한화이글스</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 반응형웹 필수 소스 -->
+
+    <meta name="generator" content="windows notepad" />
+    <meta
+      name="keywords"
+      content="프론트엔드 디자인,웹디자인,uxui디자인,uiux디자인,웹퍼블리셔,html,css,포토샵,일러스트,피그마,javascript,jquery,포트폴리오"
+    />
+    <meta
+      name="description"
+      content="안녕하세요! 프론트엔드 디자이너 입사지원자 강혜경입니다. 프로토타입 포트폴리오 웹사이트입니다."
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <!--로그인 페이지 단독 css 넣어줘야 함-->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- 폰트 어썸 링크 -->
+  </head>
+  <style></style>
+  <body class="page-login">
+    <!-- 메인페이지와의 구분을 위헤 넣어줘야 함 // 우선순위를 더 높게 만드는 것임 -->
+    <header id="TOP" class="header-left">
+      <div class="header-inner">
+        <h1 class="header-logo">
+          <a href="HANWHA-HTML-TAP.html">
+            <img src="./images/intro_eagles_logo-remove.png" alt="한화로고"
+          /></a>
+        </h1>
+        <!-- 헤더,로고 (이미지 삽입예정)-->
+
+        <!-- <button
+          class="hamburger"
+          aira-label="메뉴열기"
+          aria-expanded="flase"
+          aria-controls="mainNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button> -->
+        <!-- 모바일모드 햄버거 -->
+
+        <nav class="header-center gnb" role="navigation">
+          <ul class="depth1">
+            <li>
+              <a href="#">EAGLES</a>
+              <div class="depth2-gnb">
+                <!--depth2-gnb로 헤더에 너비 맞추고 depth2로 depth1이랑 위치
+                맞추기 -->
+                <ul class="depth2 depth2-1">
+                  <li><a href="#">구단소개</a></li>
+                  <li><a href="#">그룹사소개</a></li>
+                  <li><a href="#">HISTORY</a></li>
+                  <li><a href="#">대전 한화생명볼파크</a></li>
+                  <li><a href="#">사회공헌</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <a href="#">PLAYERS</a>
+              <div class="depth2-gnb">
+                <ul class="depth2 depth2-2">
+                  <li><a href="#">코칭스탭</a></li>
+                  <li><a href="#">투수</a></li>
+                  <li><a href="#">포수</a></li>
+                  <li><a href="#">내야수</a></li>
+                  <li><a href="#">외야수</a></li>
+                  <li><a href="#">군입대 선수</a></li>
+                  <li><a href="#">응원단</a></li>
+                  <li><a href="#">STAFF</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#">GAME</a>
+              <div class="depth2-gnb">
+                <ul class="depth2 depth2-3">
+                  <li><a href="#">1군 경기일정</a></li>
+                  <li><a href="#">퓨처스 경기일정</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#">FAN</a>
+              <div class="depth2-gnb">
+                <ul class="depth2 depth2-4">
+                  <li><a href="#">구단소식</a></li>
+                  <li><a href="#">키즈클럽</a></li>
+                  <li><a href="#">팬 타임즈</a></li>
+                  <li><a href="#">갤러리</a></li>
+                  <li><a href="#">이글스 아카이브</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="#">SHOP</a></li>
+            <li><a href="#">TICHEK</a></li>
+          </ul>
+        </nav>
+        <!--헤더, NAV메뉴 2뎁스 예정-->
+
+        <div class="header-right">
+          <div class="header-utility-short">
+            <a href="#">좌석뷰 확인하기</a>
+          </div>
+          <ul class="header-utility-long">
+            <li class="divider"><a href="#">KO</a></li>
+            <li><a href="#">EN</a></li>
+            <li><a href="#">LOGIN</a></li>
+            <li><a href="#">JOIN US</a></li>
+          </ul>
+        </div>
+        <!--header-utility END-->
+      </div>
+      <!-- </ .header_inner > -->
+    </header>
+    <!--header 겉표지 끝-->
+
+    <main>
+      <section class="section-p">
+        <div class="section-inner">
+          <!-- 섹션의 이너인데 크기는 줄어들 예정 -->
+
+          <div class="login-title">
+            <h3>LOGIN</h3>
+            <p>한화이글스 회원 로그인</p>
+          </div>
+          <form id="hanwha-login" action="" method="">
+            <div class="login-field">
+              <label for="id">아이디</label>
+              <input id="id" name="id" type="text" required />
+            </div>
+
+            <div class="login-field">
+              <label for="password">비밀번호</label>
+              <input id="password" name="password" type="password" required />
+              <!--비밀번호는 타입: password-->
+            </div>
+
+            <div class="login-save">
+              <!--글자보다 체크박스가 먼저 앞에 오니까 감싸야 함-->
+              <input type="checkbox" id="saveId" name="saveId" />
+              <label>아이디 저장 </label>
+            </div>
+
+            <button type="submit">로그인</button>
+          </form>
+
+          <div class="login-text">
+            <p>
+              한화이글스 회원이 아니세요?
+              <span
+                ><a href="#" class="login-text-link-color">회원가입</a></span
+              >
+            </p>
+            <p class="login-text-flex">
+              <span class="login-text-link login-text-link-divider"
+                ><a href="#">아이디찾기</a></span
+              ><span class="login-text-link"><a href="#">비밀번호찾기</a></span>
+            </p>
+          </div>
+        </div>
+        <!--section-inner-->
+      </section>
+      <!--hero, video-->
+
+      <aside class="aside">
+        <ul class="aside-flex">
+          <li>
+            <a
+              href="#"
+              onclick="window.alert('패스트 프로토타입 제작\n 작업 예정입니다');"
+              ><img src="./images/youtube_logo.jpg" alt="유튜브 로고"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="window.alert('패스트 프로토타입 제작\n 작업 예정입니다');"
+              ><img src="./images/face_logo.jpg" alt="페이스북 로고"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="window.alert('패스트 프로토타입 제작\n 작업 예정입니다');"
+              ><img src="./images/insta_logo.jpg" alt="인스타 로고"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="window.alert('패스트 프로토타입 제작\n 작업 예정입니다');"
+              ><img src="./images/x_logo.jpg" alt="트위터 로고"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="window.alert('패스트 프로토타입 제작\n 작업 예정입니다');"
+              ><img src="./images/pinter_logo.jpg" alt="핀터레스트 로고"
+            /></a>
+          </li>
+        </ul>
+      </aside>
+      <!-- aside(float 활용예정)-->
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-box">
+          <h2>HANWHA EAGLES</h2>
+
+          <div class="footer-box-span">
+            <p>
+              <span>대전광역시 중구 대종로 373 한화이글스</span
+              ><span>대표이사 박종태</span>
+              <span>사업자등록번호 306-81-12757</span>
+            </p>
+            <p><span>TEL 042-630-8200</span><span>FAX 042-632-2929</span></p>
+          </div>
+
+          <ul class="footer-nav">
+            <li><a href="#">법적고지</a></li>
+            <li><a href="#" class="footer-nav-color">개인정보 처리방침</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">고객문의</a></li>
+            <li><a href="#">사이트맵</a></li>
+            <li><a href="#">광고문의</a></li>
+          </ul>
+        </div>
+        <div class="footer-box footer-box-right">
+          <div class="footer-box-after">
+            <a href="#" class="footer-box-after-under">계열사 바로가기</a>
+          </div>
+          <p><small>&copy; 2025 My Portfolio. All rights reserved.</small></p>
+          <a href="#" class="top"> TOP</a>
+        </div>
+      </div>
+      <!--footer-inner-->
+    </footer>
+  </body>
+</html>

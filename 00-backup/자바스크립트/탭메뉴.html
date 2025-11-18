@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>프론트엔드 디자인 / 반응형웹(RWD, responsiveWeb)기초코딩 실습</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 반응형웹 필수 소스 -->
+
+    <meta name="generator" content="windows notepad" />
+    <meta
+      name="keywords"
+      content="프론트엔드 디자인,웹디자인,uxui디자인,uiux디자인,웹퍼블리셔,html,css,포토샵,일러스트,피그마,javascript,jquery,포트폴리오"
+    />
+    <meta
+      name="description"
+      content="안녕하세요! 프론트엔드 디자이너 입사지원자 강혜경입니다. 프로토타입 포트폴리오 웹사이트입니다."
+    />
+
+    <style>
+      .tablist {
+        max-width: 50%;
+        /*margin: 0 auto;*/
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 40px;
+        padding: 4px;
+        background-color: black;
+        border-radius: 10px;
+      }
+
+      .tab {
+        flex: 1 1 auto;
+        border: none;
+        background-color: black;
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 8px 12px;
+        border-radius: 10px;
+      } /* 클릭하면 색깔 바뀌는 것도 구현해야함 */
+
+      /* 선택된 탭 배경색 바꾸기*/
+      .tab.active {
+        background-color: orange; /*변경요함*/
+      }
+
+      .grid-boxs {
+        /* margin: 0 auto;*/
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        padding: 0;
+        margin: 0 0 24px 0;
+        list-style: none;
+      }
+
+      .grid-boxs li {
+        /* border-radius: 10px;
+        overflow: hidden;*/
+        background: black;
+        color: white;
+        padding: 0;
+        margin: 0;
+      }
+
+      /*이미지 박스와 이미지 영역*/
+      .grid-boxs-img {
+        /*이미지박스 비율*/
+        aspect-ratio: 1 / 1; /* ✅ 가로:세로 = 1:1 (정사각형) 4/3, 16/9, 5/6있음*/
+        overflow: hidden;
+      }
+
+      .grid-boxs-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top; /*잘릴 떄 기준*/
+        display: block;
+      }
+
+      /*텍스트박스와 텍스트 영역*/
+      .grid-boxs-text {
+        /*text-align: center;*/
+        /*패딩은 안 줄거임*/
+      }
+
+      .grid-boxs-text h3 {
+        color: #666;
+        font-size: 0.875rem;
+        margin-bottom: 8px;
+      }
+
+      .grid-boxs-text p {
+        font-size: 1rem;
+        margin-bottom: 4px;
+      }
+
+      /* 숨김 상태 (필터 시) */
+      .is-hidden {
+        display: none !important;
+      }
+
+      /* 반응형 */
+      @media (max-width: 1023px) {
+        .grid-boxs {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 767px) {
+        .grid-boxs {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tablist" role="tablist" aria-label="MD 분류">
+      <button
+        class="tab active"
+        role="tab"
+        aria-selected="true"
+        data-filter="spider"
+      >
+        스파이더샵
+      </button>
+      <button
+        class="tab"
+        role="tab"
+        aria-selected="false"
+        data-filter="hyungji"
+      >
+        형지샵
+      </button>
+    </div>
+
+    <ul class="grid-boxs">
+      <!-- 스파이더샵 8개 -->
+      <li data-shop="spider">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <li data-shop="spider">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <li data-shop="spider">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <li data-shop="spider">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <li data-shop="spider">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <li data-shop="spider">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <li data-shop="spider">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <li data-shop="spider">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <!-- ... 같은 형식으로 7개 더 (data-shop="spider") -->
+
+      <!-- 형지샵 8개 -->
+      <li data-shop="hyungji">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <li data-shop="hyungji">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <li data-shop="hyungji">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <li data-shop="hyungji">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <li data-shop="hyungji">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <li data-shop="hyungji">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <li data-shop="hyungji">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <li data-shop="hyungji">
+        <div class="grid-boxs-img">
+          <img src="./images/banner_g_v5_500x600.png" alt="" />
+        </div>
+        <div class="grid-boxs-text">
+          <h3>MD이름</h3>
+          <p>MD가격</p>
+        </div>
+      </li>
+      <!-- ... 같은 형식으로 7개 더 (data-shop="hyungji") -->
+    </ul>
+    <!-- 하나의 ul안에 16개의 li가 들어감-->
+
+    <a href="#" class="view-all">VIEW ALL MD</a>
+
+    <!--자바스크립트 시작-->
+    <script>
+      const tabs = document.querySelectorAll(".tablist .tab"); //모든 탭 버튼(스파이더샵, 형지샵)
+      const cards = document.querySelectorAll(".grid-boxs > li"); //모든 상품 카드(li)
+
+      //(1) 탭 상태 바꾸기
+      function applyFilter(target) {
+        /* target 은 “지금 클릭한 탭의 이름(spider, hyungji)”이에요.
+           이 함수는 “그 탭에 맞게 화면을 바꿔주는 역할”을 합니다.*/
+        tabs.forEach((tab) => {
+          //탭메뉴들을 하나씩 돌리면서
+          const active = tab.dataset.filter === target;
+          //HTML에 있는 data-filter= 값을 가져와서 클릭된 탭과 이름이 같은지 확인 (true/false)
+          tab.classList.toggle("active", active);
+          //같으면 .active 클래스 붙이고, 다르면 떼기
+          tab.setAttribute("aria-selected", String(active));
+          //접근성용: 선택 여부(true/false)를 표시
+        });
+
+        //(2) 카드 필터링
+        cards.forEach((card) => {
+          //상품 카드를 하나씩 돌면서
+          const match = card.dataset.shop === target;
+          //각 카드의 소속(shop) 값을 가져와서 (data-shop=) 클릭된 탭의 이름과 같은지 확인
+          card.classList.toggle("is-hidden", !match);
+          //같지 않으면(is-hidden = true) 숨기기
+        });
+      }
+
+      //(3)초기상태 세팅: 첫 탭 활성화
+      const initial =
+        document.querySelector(".tab.active")?.dataset.filter || "spider";
+      applyFilter(initial);
+
+      // 클릭 이벤트
+      tabs.forEach(
+        (tab) =>
+          tab.addEventListener("click", () => applyFilter(tab.dataset.filter))
+        //버튼 클릭을 감지 - 클릭한 버튼의 data-filter 값 읽기 (spider/hyungji) - 클릭된 탭 이름을 전달해서 화면 변경 실행
+      );
+    </script>
+    <!--“코드를 쓸 때 순서”랑 “실행될 때 순서”는 다를 수 있다.
+         준비 → 메뉴얼 세우기 → 오픈 → 손님 오면 반응하기
+    -->
+  </body>
+</html>
+<!--[한 화면 안에서 다른 페이지처럼 보이게 만드는 장치]
+
+1. HTML: 버튼과 콘텐츠에 data-tab 값으로 “연결고리”를 만든다.
+
+2. CSS:
+- 평소에는 콘텐츠를 전부 숨겨둔다.
+- .is-active 가 붙은 콘텐츠만 보이게 한다.
+
+3. JS:
+- 내가 누른 버튼의 data-tab 값을 가져와
+- 그 값과 같은 콘텐츠만 .is-active로 바꾼다
+
+----------------------------------------------------------
+[속성의 두 가지 종류]
+
+1. 보이는 속성(class, src, href, style 등등)
+
+2. 보이지 않는 속성(role, aria-xxx, data-xxx 등등): 웹 접근성, 스크립트, 데이터 구분을 위한 것
+
+- role: 사람 눈에는 버튼이지만, 컴퓨터에겐 "이건 탭 버튼이야" 라고 알려주는 이름표.
+
+- aria-label: 시각장애인용 “말하는 라벨 스티커”
+
+- aria-selected="true" / "false":
+탭이나 버튼처럼 여러 개 중에 하나만 선택될 때,
+“지금 이게 선택된 상태인가?”를 알려주는 표시.
+
+- data-속성 (data-filter, data-shop, 등): 
+    data-filter="spider" → 이 버튼은 “스파이더샵 필터”
+    data-shop="spider" → 이 상품은 “스파이더샵 소속”
+
+    JS에서 이렇게 읽음 👇
+
+    btn.dataset.filter  // "spider"
+    li.dataset.shop     // "spider"
+
+[요약정리]
+1. role / aria-* 는 “사람을 위한 접근성”
+2. data-* 는 “개발자를 위한 데이터 연결”
+
+-----------------------------------------------------------------
+
+[나 혼자 보는 탭메뉴 간단 구조: 어떤 일이 순서대로 일어나는지만 알면 된다.]
+
+저장 - 정의 - 때가 오면 - 실행
+
+저장의 종류 2가지
+1. 항상 고정되어 있는 값(전역변수)
+2. 매번 실행할 때 바뀌는 값(인자 == 매개변수)
+
+
+-->

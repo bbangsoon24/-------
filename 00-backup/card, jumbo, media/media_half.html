@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>프론트엔드 디자인 / 반응형웹(RWD, responsiveWeb)기초코딩 실습</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 반응형웹 필수 소스 -->
+
+    <meta name="generator" content="windows notepad" />
+    <meta
+      name="keywords"
+      content="프론트엔드 디자인,웹디자인,uxui디자인,uiux디자인,웹퍼블리셔,html,css,포토샵,일러스트,피그마,javascript,jquery,포트폴리오"
+    />
+    <meta
+      name="description"
+      content="안녕하세요! 프론트엔드 디자이너 입사지원자 강혜경입니다. 프로토타입 포트폴리오 웹사이트입니다."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- 폰트 어썸 링크 -->
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .half-media {
+        display: flex;
+        align-items: center; /*가로로 센터에*/
+      }
+      .half-media_img-wrapper {
+        flex: 0 1 48.3333%;
+        margin-right: 3.3333%;
+        background: pink;
+      }
+      .half-media_img {
+        width: 100%;
+      }
+
+      .half-media_txt {
+        flex: 1; /*모든 박스가 남는 공간을 똑같이 나눠 가짐 / 혼자일 경우 독점*/
+      }
+
+      .half-media_txt > *:last-child {
+        /* 내자식 전체 중에 막내만 / 칼럼에서 미리 가장 마지막 자녀요소의 여백을 채워두기 */
+        margin-bottom: 0;
+      }
+      .half-media_title {
+        margin-bottom: 10px;
+        font-size: 3.125rem;
+        background-color: tan;
+      }
+
+      /* 미디어쿼리 적용시*/
+      @media (max-width: 768px) {
+        .media {
+          display: block;
+        }
+        .media_img-wrapper {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+      /* / .미디어쿼리 */
+
+      .media_reverse {
+        /*좌우 반대*/
+      }
+      .media_reverse .media_img-wrapper {
+        margin-right: 0;
+      }
+      .media_reverse .media_txt {
+        margin-right: 3.3333%;
+        text-align: right;
+      }
+
+      /* 미디어쿼리 적용시*/
+      @media (max-width: 768px) {
+        .half-media {
+          display: block;
+        }
+        .half-media_img-wrapper {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="half-media">
+      <figure class="half-media_img-wrapper">
+        <img
+          class="half-media_img"
+          src="../img_css/coffee.png"
+          alt="커피 한잔"
+        />
+      </figure>
+      <div class="half-media_txt">
+        <h3 class="half-media_title">제목</h3>
+        <p class="half-media_text">문단</p>
+      </div>
+      <!-- / .media_txt -->
+    </div>
+    <!-- /.media -->
+  </body>
+</html>
+<!-- 이너가 1200이라는 전제하에입니당 -->

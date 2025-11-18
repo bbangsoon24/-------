@@ -1,0 +1,73 @@
+<!-- 슬라이드 영역 -->
+<div class="swiper swiper-f">
+  <!-- 트랙(슬라이드 전체 감싸는 부분) -->
+  <div class="swiper-wrapper">
+    <!-- 각각의 슬라이드 -->
+    <div class="swiper-slide">슬라이드1</div>
+    <div class="swiper-slide">슬라이드2</div>
+    <div class="swiper-slide">슬라이드3</div>
+    <div class="swiper-slide">슬라이드4</div>
+    <div class="swiper-slide">슬라이드5</div>
+    <div class="swiper-slide">슬라이드6</div>
+  </div>
+
+  <!-- 좌우 버튼 -->
+  <div class="swiper-btn-left"></div>
+  <div class="swiper-btn-right"></div>
+</div>
+
+
+/* 전체 슬라이더 크기 */
+.swiper {
+  width: 800px;     /* 원하는 가로 크기 */
+  margin: auto;     /* 가운데 정렬 */
+  position: relative; /* 버튼 위치를 잡기 위해 relative */
+}
+
+/* 각 슬라이드 스타일 */
+.swiper-slide {
+  background: #f2f2f2;
+  border-radius: 10px;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 버튼 공통 스타일 */
+.swiper-btn-left,
+.swiper-btn-right {
+  position: absolute;          /* 슬라이더 안에서 절대 위치 */
+  top: 50%;                    /* 세로 중앙 */
+  transform: translateY(-50%); /* 정확히 중앙 정렬 */
+  width: 40px;
+  height: 40px;
+  background: rgba(0,0,0,0.4); /* 반투명 배경 */
+  border-radius: 50%;          /* 동그라미 버튼 */
+  cursor: pointer;
+  z-index: 10;                 /* 슬라이드보다 위에 */
+}
+
+/* 좌우 위치 */
+.swiper-btn-left { left: 10px; }
+.swiper-btn-right { right: 10px; }
+
+
+
+<!-- Swiper 라이브러리 연결 (CDN) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper('.swiper-f', {
+    slidesPerView: 3,    // 한 화면에 3개 보임
+    slidesPerGroup: 3,   // 버튼 누를 때 3개씩 이동
+    spaceBetween: 20,    // 카드 사이 간격(px)
+    loop: false,         // 무한 반복 끔
+    autoplay: false,     // 자동 넘김 끔
+    navigation: {        // 버튼 연결
+      nextEl: '.swiper-btn-right',
+      prevEl: '.swiper-btn-left',
+    },
+  });
+</script>

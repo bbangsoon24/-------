@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>프론트엔드 디자인 / 반응형웹(RWD, responsiveWeb)기초코딩 실습</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 반응형웹 필수 소스 -->
+
+    <meta name="generator" content="windows notepad" />
+    <meta
+      name="keywords"
+      content="프론트엔드 디자인,웹디자인,uxui디자인,uiux디자인,웹퍼블리셔,html,css,포토샵,일러스트,피그마,javascript,jquery,포트폴리오"
+    />
+    <meta
+      name="description"
+      content="안녕하세요! 프론트엔드 디자이너 입사지원자 강혜경입니다. 프로토타입 포트폴리오 웹사이트입니다."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- 폰트 어썸 링크 -->
+
+    <style>
+      .level1-heading {
+        padding: 30px 10px;
+        background: #e25c00;
+        color: #fff;
+        font-size: 1.75rem;
+        text-align: center;
+      }
+
+      .level1-heading_inner {
+        position: relative;
+        display: inline-block; /* transform을 위한 속성*/
+        transform: translateY(
+          -20%
+        ); /* 텍스트 아래 밑줄이 있기 때문에 아래로 처져 보여서 위로 살짝 올리기*/
+      }
+
+      .level1-heading_inner::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        width: 80px; /* 고정값임 */
+        height: 1px;
+        background-color: currentColor;
+        transform: translateX(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 기본형 제목 -->
+    <h1 class="level1-heading">
+      <span class="level1-heading_inner">페이지 제목</span>
+    </h1>
+  </body>
+</html>

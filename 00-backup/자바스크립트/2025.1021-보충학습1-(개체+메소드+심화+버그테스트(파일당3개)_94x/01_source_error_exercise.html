@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>자바스크립트 [보충학습] 버그 테스트1 - 에러 3개 잡기!!
+
+    <style>
+  </style>
+  <script>
+  // Date()객체와 Array() 객체를 이용해 오늘의 요일 알아보기?
+  
+            // index   [0]  [1]  [2]  [3]  [4] [5]  [6]
+   var days=Array("일","월","화","수","목","금","토");
+   var today=date();
+   var yoil=days[today.getDay()];
+
+   document.write(yoil + "요일<br><br>");
+   
+   // 전체 숫자의 합계 구하기?
+   var money=[100,300,500,50];
+   var theMoney=money.length;
+   var total=0;
+        for(var i=0; i<=theMoney; i++) {
+		  total=total+money[i];
+		} document.write(total);   //출력: 950
+  </script>
+  </head>
+  <body>
+
+  </body>
+</html>

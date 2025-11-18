@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>프론트엔드 디자인 / 반응형웹(RWD, responsiveWeb)기초코딩 실습</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 반응형웹 필수 소스 -->
+
+    <meta name="generator" content="windows notepad" />
+    <meta
+      name="keywords"
+      content="프론트엔드 디자인,웹디자인,uxui디자인,uiux디자인,웹퍼블리셔,html,css,포토샵,일러스트,피그마,javascript,jquery,포트폴리오"
+    />
+    <meta
+      name="description"
+      content="안녕하세요! 프론트엔드 디자이너 입사지원자 강혜경입니다. 프로토타입 포트폴리오 웹사이트입니다."
+    />
+
+    <style>
+      .modal {
+        display: none; /*기본이 숨기기*/
+        position: fixed;
+        z-index: 1000;
+        display: flex; /*너비 높이 대신*/
+        justify-content: center;
+        align-items: center;
+      }
+      .modal-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .close {
+        position: absolute;
+
+        top: 10px;
+        right: 14px;
+        font-size: 24px;
+        cursor: pointer;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="modal">
+      <img src="./img/jjang.jpg" class="modal-img" />
+      <span class="close">&times;</span>
+      <!--&times; == “닫기(X)”-->
+    </div>
+    <script>
+      const modal = document.querySelector(".modal");
+      const closeBtn = document.querySelector(".close");
+
+      // ✅ 페이지 열리자마자 모달 표시
+      window.addEventListener("DOMContentLoaded", () => {
+        modal.style.display = "block";
+      });
+
+      // 닫기 버튼 클릭 시 닫기
+      closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      // 배경 클릭 시 닫기
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
+<!--
+addEventListener: 이벤트를 “감지해서 실행”하도록 연결해주는 함수
+[그 함수의 종류들]
+1. "DOMContentLoaded": HTML이 다 읽혀서 DOM이 완성됐을 때
+2. "click"
+3. "scroll"
+4. "resize": 창 크기가 바뀔 때
+-->

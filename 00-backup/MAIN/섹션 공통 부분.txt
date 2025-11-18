@@ -1,0 +1,24 @@
+[ 메인 - 섹션 공통 부분 ]
+
+.section-f {
+  padding: 120px 0;
+}
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  /*background: skyblue;*/
+}
+
+.section-bg {
+  background: #fdfaf7;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #f1accb;
+
+  margin-bottom: 64px;
+}

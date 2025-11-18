@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>한화이글스</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 반응형웹 필수 소스 -->
+
+    <meta name="generator" content="windows notepad" />
+    <meta
+      name="keywords"
+      content="프론트엔드 디자인,웹디자인,uxui디자인,uiux디자인,웹퍼블리셔,html,css,포토샵,일러스트,피그마,javascript,jquery,포트폴리오"
+    />
+    <meta
+      name="description"
+      content="안녕하세요! 프론트엔드 디자이너 입사지원자 강혜경입니다. 프로토타입 포트폴리오 웹사이트입니다."
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- 폰트 어썸 링크 -->
+  </head>
+  <style></style>
+  <body>
+    <header id="TOP" class="header-left">
+      <div class="header-inner">
+        <h1 class="header-logo">
+          <a href="#">
+            <img src="./images/header_logo_main.png" alt="한화로고"
+          /></a>
+        </h1>
+        <!-- 헤더,로고 (이미지 삽입예정)-->
+
+        <!-- <button
+          class="hamburger"
+          aira-label="메뉴열기"
+          aria-expanded="flase"
+          aria-controls="mainNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button> -->
+        <!-- 모바일모드 햄버거 -->
+
+        <nav class="header-center gnb" role="navigation">
+          <ul class="depth1">
+            <li>
+              <a href="#">EAGLES</a>
+              <div class="depth2-gnb">
+                <!--depth2-gnb로 헤더에 너비 맞추고 depth2로 depth1이랑 위치
+                맞추기 -->
+                <ul class="depth2 depth2-1">
+                  <li><a href="#">구단소개</a></li>
+                  <li><a href="#">그룹사소개</a></li>
+                  <li><a href="#">HISTORY</a></li>
+                  <li><a href="#">대전 한화생명볼파크</a></li>
+                  <li><a href="#">사회공헌</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <a href="#">PLAYERS</a>
+              <div class="depth2-gnb">
+                <ul class="depth2 depth2-2">
+                  <li><a href="#">코칭스탭</a></li>
+                  <li><a href="#">투수</a></li>
+                  <li><a href="#">포수</a></li>
+                  <li><a href="#">내야수</a></li>
+                  <li><a href="#">외야수</a></li>
+                  <li><a href="#">군입대 선수</a></li>
+                  <li><a href="#">응원단</a></li>
+                  <li><a href="#">STAFF</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#">GAME</a>
+              <div class="depth2-gnb">
+                <ul class="depth2 depth2-3">
+                  <li><a href="#">1군 경기일정</a></li>
+                  <li><a href="#">퓨처스 경기일정</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#">FAN</a>
+              <div class="depth2-gnb">
+                <ul class="depth2 depth2-4">
+                  <li><a href="#">구단소식</a></li>
+                  <li><a href="#">키즈클럽</a></li>
+                  <li><a href="#">팬 타임즈</a></li>
+                  <li><a href="#">갤러리</a></li>
+                  <li><a href="#">이글스 아카이브</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="#">SHOP</a></li>
+            <li><a href="#">TICHEK</a></li>
+          </ul>
+        </nav>
+        <!--헤더, NAV메뉴 2뎁스 예정-->
+
+        <!-- <nav class="header-center gnb">
+          <ul class="depth1">
+            <li>EAGLES</li>
+            <li>PLAYERS</li>
+            <li>GAME</li>
+            <li>FAN</li>
+            <li>SHOP</li>
+          </ul>
+
+          <div class="mega-total">
+            <div class="depth2">
+              <a href="#">코칭스탭</a>
+              <a href="#">투수</a>
+              <a href="#">포수</a>
+              <a href="#">내야수</a>
+              <a href="#">외야수</a>
+              <a href="#">군입대 선수</a>
+              <a href="#">응원단</a>
+              <a href="#">STAFF</a>
+            </div>
+
+            <div class="depth2">
+              <a href="#">구단소개</a>
+              <a href="#">그룹사소개</a>
+              <a href="#">HISTORY</a>
+              <a href="#">대전 한화생명볼파크</a>
+              <a href="#">사회공헌</a>
+            </div>
+
+            <div class="depth2">
+              <a href="#">1군 경기일정</a>
+              <a href="#">퓨처스 경기일정</a>
+            </div>
+
+            <div class="depth2">
+              <a href="#">구단소식</a>
+              <a href="#">키즈클럽</a>
+              <a href="#">팬 타임즈</a>
+              <a href="#">갤러리</a>
+              <a href="#">이글스 아카이브</a>
+            </div>
+          </div>
+           2depth end
+        </nav>-->
+
+        <div class="header-right">
+          <div class="header-utility-short">
+            <a href="#">좌석뷰 확인하기</a>
+          </div>
+          <ul class="header-utility-long">
+            <li class="divider"><a href="#">KO</a></li>
+            <li><a href="#">EN</a></li>
+            <li><a href="#">LOGIN</a></li>
+            <li><a href="#">JOIN US</a></li>
+          </ul>
+        </div>
+        <!--header-utility END-->
+      </div>
+      <!-- </ .header_inner > -->
+    </header>
+    <!--header 겉표지 끝-->
+
+    <main>
+      <section>
+        <div class="section-video">
+          <!-- 비디오 박스이자 섹션의 이너가 되어줌 -->
+          <video autoplay muted loop playsinline>
+            <source
+              src="video/이제 시작합니다 𝑰𝑻 𝑰𝑺 𝑻𝑰𝑴𝑬.mp4"
+              type="video/mp4"
+            />
+            브라우저가 video 태그를 지원하지 않습니다.
+          </video>
+        </div>
+      </section>
+      <!--hero, video-->
+
+      <aside class="aside">
+        <ul class="aside-flex">
+          <li>
+            <a
+              href="#"
+              onclick="window.alert('패스트 프로토타입 제작\n 작업 예정입니다');"
+              ><img src="./images/youtube_logo.jpg" alt="유튜브 로고"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="window.alert('패스트 프로토타입 제작\n 작업 예정입니다');"
+              ><img src="./images/face_logo.jpg" alt="페이스북 로고"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="window.alert('패스트 프로토타입 제작\n 작업 예정입니다');"
+              ><img src="./images/insta_logo.jpg" alt="인스타 로고"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="window.alert('패스트 프로토타입 제작\n 작업 예정입니다');"
+              ><img src="./images/x_logo.jpg" alt="트위터 로고"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="window.alert('패스트 프로토타입 제작\n 작업 예정입니다');"
+              ><img src="./images/pinter_logo.jpg" alt="핀터레스트 로고"
+            /></a>
+          </li>
+        </ul>
+      </aside>
+      <!-- aside(float 활용예정)-->
+
+      <section class="section-p section-m">
+        <div class="section-inner">
+          <div class="section2-cards">
+            <div class="section2-card section2-card-after">
+              <div class="section2-card-title">
+                <span>대전</span>
+                <h3>2025.10.24(금) 18:30</h3>
+              </div>
+              <div class="section2-card-imgages">
+                <div class="section2-card-img">
+                  <img
+                    class="hanwha-logo"
+                    src="./images/hanwha-removebg-preview.png"
+                    alt="한화로고"
+                  />
+                </div>
+                <span>vs</span>
+                <div class="section2-card-img">
+                  <img
+                    class="samsung-logo"
+                    src="./images/samsung-removebg-preview.png"
+                    alt="삼성로고"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- 개별 카드 (패딩을 상하좌우 한번에 줌)-->
+            <div class="section2-card">
+              <div class="section2-card-title">
+                <span>대전</span>
+                <h3>2025.10.25(토) 14:30</h3>
+              </div>
+              <div class="section2-card-imgages">
+                <div class="section2-card-img">
+                  <img
+                    class="hanwha-logo"
+                    src="./images/hanwha-removebg-preview.png"
+                    alt="한화로고"
+                  />
+                </div>
+                <span>vs</span>
+                <div class="section2-card-img">
+                  <img
+                    class="samsung-logo"
+                    src="./images/samsung-removebg-preview.png"
+                    alt="삼성로고"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- 개별 카드 (패딩을 상하좌우 한번에 줌)-->
+          </div>
+          <!-- 카드 두개 넣어두는 박스-->
+        </div>
+        <!-- section-inner (너비, 내부 왼오 패딩)-->
+      </section>
+      <!-- section 겉표지 (위아래 패딩)-->
+
+      <section class="section-p">
+        <div>
+          <!--section inner이지만 클래스명은 안줌 왜냐면 너비조정을 안 하기 때문-->
+          <div class="flow-wrapper">
+            <ul class="slide-list">
+              <!-- 원본 세트 -->
+              <li class="slide-item">
+                <img src="./images/ryu.jpg" alt="류현진선수" />
+              </li>
+              <li class="slide-item">
+                <img src="./images/moon.jpg" alt="문동주선수" />
+              </li>
+              <li class="slide-item">
+                <img src="./images/chae.jpg" alt="채은성선수" />
+              </li>
+              <li class="slide-item">
+                <img src="./images/no.jpg" alt="선수4" />
+              </li>
+              <li class="slide-item">
+                <img src="./images/ryu2.jpg" alt="선수5" />
+              </li>
+              <li class="slide-item">
+                <img src="./images/moon2.jpg" alt="선수6" />
+              </li>
+              <li class="slide-item">
+                <img src="./images/chae2.jpg" alt="선수7" />
+              </li>
+              <li class="slide-item">
+                <img src="./images/no2.jpg" alt="선수8" />
+              </li>
+
+              <!-- 복제 세트 (무한 루프용) -->
+              <li class="slide-item">
+                <img src="./images/ryu.jpg" alt="선수1" />
+              </li>
+              <li class="slide-item">
+                <img src="./images/moon.jpg" alt="선수2" />
+              </li>
+              <li class="slide-item">
+                <img src="./images/chae.jpg" alt="선수3" />
+              </li>
+              <li class="slide-item">
+                <img src="./images/no.jpg" alt="선수4" />
+              </li>
+              <li class="slide-item">
+                <img src="./images/ryu2.jpg" alt="선수5" />
+              </li>
+              <li class="slide-item">
+                <img src="./images/moon2.jpg" alt="선수6" />
+              </li>
+              <li class="slide-item">
+                <img src="./images/chae2.jpg" alt="선수7" />
+              </li>
+              <li class="slide-item">
+                <img src="./images/no2.jpg" alt="선수8" />
+              </li>
+            </ul>
+          </div>
+          <!-- js 없이 무한루프 만들기-->
+
+          <div class="btn-box">
+            <a href="#" class="btn">GO TO GALLERY</a>
+          </div>
+        </div>
+        <!--section-inner-->
+      </section>
+
+      <section class="section-p">
+        <div class="section-inner">
+          <ul class="news-boxs">
+            <li class="news-box">
+              <div class="news-box-img">
+                <a href="#"><img src="./images/news_1.jpg" alt="한화뉴스" /></a>
+              </div>
+              <div class="news-box-text">
+                <p>2025-10-11</p>
+                <h2>한화이글스, 팀 스토리 담은 2025<br />포스트시즌 캠페인</h2>
+                <p class="news-box-text-opa">
+                  한화이글스가 포스트시즌을 앞두고 그간의 여정과 팀
+                </p>
+                <a href="#" class="news-box-text-after">READMORE</a>
+              </div>
+            </li>
+            <li class="news-box">
+              <div class="news-box-img">
+                <a href="#"><img src="./images/news_2.jpg" alt="한화뉴스" /></a>
+              </div>
+              <div class="news-box-text">
+                <p>2025-10-16</p>
+                <h2>
+                  플레이오프 1차전 시구에 배우 김재욱,<br />2차전은 가수 겸 배우
+                  권유리
+                </h2>
+                <p class="news-box-text-opa">
+                  한화이글스는 배우 김재욱과 가수 겸 배우 권유리를
+                </p>
+                <a href="#" class="news-box-text-after">READMORE</a>
+              </div>
+            </li>
+            <li class="news-box">
+              <div class="news-box-img">
+                <a href="#"><img src="./images/news_3.jpg" alt="한화뉴스" /></a>
+              </div>
+              <div class="news-box-text">
+                <p>2025-10-12</p>
+                <h2>
+                  헬로 퓨처!(Hello Future!), 2026 한화이글스 신인선수 입단식
+                  개최
+                </h2>
+                <p class="news-box-text-opa">
+                  "새벽훈련을 위해 일어났을 때 하루도 거르지 않고 항상
+                </p>
+                <a href="#" class="news-box-text-after">READMORE</a>
+              </div>
+            </li>
+          </ul>
+
+          <div class="btn-box">
+            <a href="#" class="btn">VIEW ALL NEWS</a>
+          </div>
+        </div>
+        <!--section-inner-->
+      </section>
+
+      <section class="section-p">
+        <div class="section-inner">
+          <div class="btn-boxs">
+            <button class="btnl">스파이더샵</button>
+            <button class="btnl">형지샵</button>
+          </div>
+
+          <ul class="grid-boxs">
+            <li>
+              <div class="grid-boxs-img">
+                <img src="./images/banner_g_v5_500x600.png" alt="" />
+              </div>
+              <div class="grid-boxs-text">
+                <h3>MD이름</h3>
+                <p>MD가격</p>
+              </div>
+            </li>
+            <li>
+              <div class="grid-boxs-img">
+                <img src="./images/banner_g_v5_500x600.png" alt="" />
+              </div>
+              <div class="grid-boxs-text">
+                <h3>MD이름</h3>
+                <p>MD가격</p>
+              </div>
+            </li>
+            <li>
+              <div class="grid-boxs-img">
+                <img src="./images/banner_g_v5_500x600.png" alt="" />
+              </div>
+              <div class="grid-boxs-text">
+                <h3>MD이름</h3>
+                <p>MD가격</p>
+              </div>
+            </li>
+            <li>
+              <div class="grid-boxs-img">
+                <img src="./images/banner_g_v5_500x600.png" alt="" />
+              </div>
+              <div class="grid-boxs-text">
+                <h3>MD이름</h3>
+                <p>MD가격</p>
+              </div>
+            </li>
+            <li>
+              <div class="grid-boxs-img">
+                <img src="./images/banner_g_v5_500x600.png" alt="" />
+              </div>
+              <div class="grid-boxs-text">
+                <h3>MD이름</h3>
+                <p>MD가격</p>
+              </div>
+            </li>
+            <li>
+              <div class="grid-boxs-img">
+                <img src="./images/banner_g_v5_500x600.png" alt="" />
+              </div>
+              <div class="grid-boxs-text">
+                <h3>MD이름</h3>
+                <p>MD가격</p>
+              </div>
+            </li>
+            <li>
+              <div class="grid-boxs-img">
+                <img src="./images/banner_g_v5_500x600.png" alt="" />
+              </div>
+              <div class="grid-boxs-text">
+                <h3>MD이름</h3>
+                <p>MD가격</p>
+              </div>
+            </li>
+            <li>
+              <div class="grid-boxs-img">
+                <img src="./images/banner_g_v5_500x600.png" alt="" />
+              </div>
+              <div class="grid-boxs-text">
+                <h3>MD이름</h3>
+                <p>MD가격</p>
+              </div>
+            </li>
+          </ul>
+
+          <a href="#">VIEW ALL MD</a>
+        </div>
+        <!--section-inner-->
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-box">여러가지</div>
+        <div class="footer-box">
+          여러가지
+          <a href="#" class="top"> TOP</a>
+        </div>
+      </div>
+      <!--footer-inner-->
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<section id="HOME" class="section-f section-bg">
+        <div class="section-inner">
+          <!-- 사이즈가 좀 작음 -->
+          <div class="hero-title">Why Not ?</div>
+          <p class="hero-txt">
+            '안될 게 뭐 있어' 라는 긍정적인 마음으로 오늘도 열심히 <br />
+            일하고 있어요!
+          </p>
+          <div class="scroll">Scroll Down</div>
+          <!-- 가상요소 선택자로 스크롤 표시 / 애니메이션으로 회전문 구현 -->
+        </div>
+      </section>
+
+---------------------------------------------------------------------------------------------- HERO HTML
+
+#HOME {
+  padding: 200px 0;
+}
+#HOME .section-inner {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #f1accb;
+
+  margin-bottom: 24px; /* 내부 세부 요소들은 마진을 사용 */
+}
+.hero-txt {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.scroll {
+  max-width: 100px;
+  height: auto;
+
+  text-align: center;
+  color: #3c3c3c;
+  font-size: 0.8rem;
+
+  z-index: 21;
+
+  position: absolute;
+  left: 50%;
+  top: 480px;
+  transform: translateX(-50%);
+}
+
+.scroll::before {
+  content: "▼";
+  display: block;
+  font-size: 0.8rem;
+  color: #3c3c3c;
+
+  animation: floatY 1s ease-in-out infinite;
+  margin-bottom: 20px; /* 텍스트와 간격 */
+}
+
+@keyframes floatY {
+  0% {
+    transform: translateY(6px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(6px);
+  }
+}
+
+------------------------------------------------ HERO CSS

@@ -1,0 +1,83 @@
+<body>
+    <header id="header">
+        <div class="header_inner">
+	<h1 class="header_logo">
+	      hyegyeong Portfoilo
+               </h1>
+	<nav class="header_nav">
+	    <ul class="header_gnb">
+                       <li><a href="#">HOME</a></li>
+                       <li><a href="#">ABOUT ME</a></li>
+                       <li><a href="#">SKILLS</a></li>
+                       <li><a href="#">PORTFOLIO</a></li>
+                       <li><a href="#">CONTACT</a></li>
+	    </ul>
+	</nav>
+        </div>
+    </header>
+
+    <main>
+      <section id="HERO" class="section1">
+         <div class="hero_inner">
+	<div class="hero_title">
+	    히어로 타이틀
+	</div>
+	<P class="hero_txt">
+	    히어로 텍스트
+	</p>
+<!-- 가상요소 선택자로 스크롤 표시 / 애니메이션으로 회전문 구현 -->
+         </div>
+      </section> </ .section1>
+
+      <section id="ABOUT ME" class="section2 section_bg">
+         <div class="section_inner">
+	<h1>ABOUT ME</h1>
+	<div class="half_section">
+	    이미지 감싸는 거 하나랑 글 감싸는 박스하나씩
+	</div>
+         </div>
+      </section>
+
+        <section id=SKILL" class="section3">
+         <div class="section_inner">
+	<h1>SKILL</h1>
+	<ul class="skill_box">
+	   <li><span>이미지</span><span>글</span></li>
+	   <li><span>이미지</span><span>글</span></li>
+	   <li><span>이미지</span><span>글</span></li>
+	   <li><span>이미지</span><span>글</span></li>
+	   <li><span>이미지</span><span>글</span></li>
+	   <li><span>이미지</span><span>글</span></li>
+	   <li><span>이미지</span><span>글</span></li>
+	</ul>
+         </div>
+      </section>
+
+      <section id="PORTFOLIO" class="section4 section_bg">
+         <div class="section_inner">
+	<h1>PORTFOLIO</h1>
+	<ul class="cards 4colums">
+	   <li class="card">위는 이미지 아래는 글</li>
+	   <li class="card">위는 이미지 아래는 글</li>
+	   <li class="card">위는 이미지 아래는 글</li>
+	   <li class="card">위는 이미지 아래는 글</li>
+	</ul>
+         </div>
+      </section>
+
+      <section id="CONTACT" class="section5">
+         <div class="section_inner">
+	<h1>CONTACT</h1>
+	<div class="over_section">
+	    이미지 감싸는 거 하나랑 글 감싸는 박스하나씩
+	</div>
+         </div>
+      </section>
+    </main>
+
+    <footet>
+       <div class="footer_text">
+	포폴용 & 저작권
+       </div>
+    </footer>
+</body>

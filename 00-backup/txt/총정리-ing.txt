@@ -1,0 +1,506 @@
+[ 가장 먼저 정해야 하는 것들 ]
+
+1. 폰트
+2. 색상
+3. 공통부분
+- * {
+  padding: 0;
+  margin: 0;
+}
+
+- *::before,
+  *::after {
+  box-sizing: border-box;
+}
+
+- body {
+  color: #3c3c3c;
+  background: #fdfaf7;
+  font-family: "MyNotoSans", sans-serif;
+  line-height: 1.5;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+4. 박스구조
+- (공통) .section-f → padding:120px 0,
+  .section-inner → max-width:1200px; padding:0 24px
+
+5. 반응형 구간
+- 768px (모바일) / 1023px (태블릿)
+
+6. 클래스명
+
+-------------------------------------------------------------------------------------------
+
+[ 🧭 HEADER ]
+
+1. 요소: 겉표지(header) / 이너 / 로고 / 네비 / 햄버거(숨김처리)
+
+2. 크기·여백
+
+- 겉표지(width:100%, height:85px, padding:16px 0)
+
+- 이너(max-width:1200px; padding:0 24px; margin:0 auto)
+
+- 로고(font-size:1.5rem // 모바일1rem)
+
+- 네비(gap 40px)
+
+- 햄버거(아직 미정)
+
+3. 색상·폰트
+
+- 겉표지(투명 → 스크롤 시 #BEE1F0, box-shadow)
+
+- 이너()
+
+- 로고(font-weight:600)
+
+- 네비(font-size:0.9rem; color:#3c3c3c;)
+
+- 햄버거(아직 미정)
+
+4. 레이아웃
+
+- 겉표지(position:fixed; top:0; z-index:1000;)
+
+- 이너(display:flex; justify-content:space-between; align-items:center)
+
+- 로고()
+
+- 네비(display:flex)
+
+- 햄버거(아직 미정)
+
+5. 기타
+
+- 겉표지(transition 0.3s)
+
+- 이너()
+
+- 로고()
+
+- 네비(max-width:1023px 이하 → 숨김)
+
+- 햄버거(아직 미정)
+
+------------------------------------------------------------------------------
+
+[ 🪄 MAIN - 🏠 HOME 섹션 (#HOME) ] *섹션패딩과 이너의 값이 유일하게 다름
+
+1. 요소: 섹션(겉표지, 배경색), 이너(콘텐츠), 타이틀, 설명, 스크롤 텍스트
+
+2. 크기·여백
+
+- 섹션(padding:360px 0 //모바일170px)
+
+- 이너(max-width:700px; text-align:center)
+
+- 타이틀(font-size:6.5rem //모바일4rem, margin-bottom:24px)
+
+- 설명(font-size:1rem)
+
+- 스크롤 텍스트(위치: absolute; left:50%; top:80%)
+
+3. 색상·폰트
+
+- 섹션(배경 #fdfaf7)
+
+- 이너()
+
+- 타이틀(color:#f1accb; font-weight:bold)
+
+- 설명(color:#3c3c3c)
+
+- 스크롤 텍스트(font-size:0.8rem; color:#3c3c3c)
+
+4. 레이아웃
+
+- 섹션(중앙정렬)
+
+- 이너()
+
+- 타이틀()
+
+- 설명()
+
+- 스크롤 텍스트(중앙 하단 고정)
+
+5. 기타
+
+- 섹션()
+
+- 이너()
+
+- 타이틀()
+
+- 설명()
+
+- 스크롤 텍스트(::before로 ▼ 애니메이션)
+
+------------------------------------------------------------------------------
+
+[ 🪄 MAIN - 👩‍💻 ABOUT 섹션 (#ABOUT) ]
+
+1. 요소: 섹션/이너(공통), 전체, 이미지박스, 이미지, 텍스트 박스, 타이틀, 문단, 버튼
+
+2. 크기·여백
+
+- 전체(display:flex; align-items:center; gap:10%)
+
+- 이미지박스(flex:0 0 40%, 원형(border-radius:50%), aspect-ratio:1/1)
+
+- 이미지(width:70%; height:70%;)
+
+- 텍스트 박스(flex:0 0 50%)
+
+- 타이틀(font-size:1.5rem; letter-spacing:5px; margin-bottom:24px)
+
+- 문단(margin-bottom:24px)
+
+- 버튼(width:200px; padding:20px 10px)
+
+3. 색상·폰트
+
+- 전체(배경 #fff)
+
+- 이미지박스(background:rgba(255,192,203,0.7))
+
+- 이미지(object-fit:cover)
+
+- 텍스트 박스(기본 폰트, color:#3c3c3c)
+
+- 타이틀(color:#bee1f0)
+
+- 문단()
+
+- 버튼(테두리 #f1accb, 글자 #f1accb, hover 시 반전)
+
+4. 레이아웃
+
+- 전체(768px 이하 세로배치)
+
+- 이미지박스(중앙정렬)
+
+- 이미지(중앙)
+
+- 텍스트 박스()
+
+- 타이틀()
+
+- 문단()
+
+- 버튼(가운데 정렬)
+
+5. 기타
+
+- 전체()
+
+- 이미지박스()
+
+- 이미지()
+
+- 텍스트 박스()
+
+- 타이틀()
+
+- 문단()
+
+- 버튼(::after FontAwesome 화살표)
+
+------------------------------------------------------------------------------
+
+[ 🪄 MAIN - 🧠 SKILL 섹션 (#SKILL) ]
+
+1. 요소: 섹션/이너(공통), 리스트, 항목, 이미지, 텍스트, 모바일
+
+2. 크기·여백
+
+- 리스트(max-width:600px; width:100%)
+
+- 항목(padding:40px 0; margin-bottom:40px)
+
+- 이미지(width:130px; padding:0 20px; gap:8px)
+
+- 텍스트(padding:0 20px)
+
+- 모바일(span=label 숨김)
+
+3. 색상·폰트
+
+- 리스트()
+
+- 항목(background:#fff; border-radius:10px;)
+
+- 이미지()
+
+- 텍스트(font-size:0.875rem // mobile)
+
+- 모바일()
+
+4. 레이아웃
+
+- 리스트()
+
+- 항목(display:flex; align-items:center;)
+
+- 이미지(display:flex; align-items:center;)
+
+- 텍스트()
+
+- 모바일()
+
+5. 기타
+
+- 리스트()
+
+- 항목(hover 시 scale(1.1))
+
+- 이미지(::after로 구분선)
+
+- 텍스트()
+
+- 모바일()
+
+------------------------------------------------------------------------------
+
+[ 🪄 MAIN - 💼 PORTFOLIO 섹션 (#PORT) ]
+
+1. 요소: 섹션/이너(공통), 전체(슬라이드,버튼), 슬라이드 겉(모음, 개별), 슬라이드 개별 내부, 개별 박스(6개), 설명 박스(3개), 버튼
+
+2. 크기·여백
+
+- 전체(width:100%; border-radius:10px; overflow:hidden!)
+
+- 슬라이드 겉
+*모음(display: flex; transition: transform 400ms ease; /*부드러운 이동*/ will-change: transform;)
+
+*개별(flex: 0 0 100%;)
+
+-슬라이드 개별 내부(grid-template-columns:repeat(2,1fr); gap:5%)
+
+- 개별 박스(border-radius:20px; overflow:hidden)
+
+- 설명 박스( display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;
+                padding: 16px 24px;)
+
+- 버튼(42×42px, 원형, 배경 #bee1f0)
+
+3. 색상·폰트
+
+- 전체(background:#fff)
+
+- 슬라이드 겉
+*모음()
+
+*개별()
+
+- 슬라이드 개별 내부(배경 #fdfaf7)
+
+- 개별 박스()
+
+- 설명 박스()
+
+- 버튼(아이콘 #3c3c3c)
+
+
+4. 레이아웃
+
+- 전체(position:relative;)
+
+- 슬라이드 겉
+*모음(display: flex;)
+
+*개별()
+
+- 슬라이드 개별 내부(모바일 세로 전환)
+
+- 개별 박스(border-radius:20px; overflow:hidden)
+
+- 설명 박스( 중앙정렬)
+
+- 버튼(위치 top:50%)
+
+
+5. 기타
+- 전체(슬라이드 JS 연동)
+
+- 슬라이드 겉
+*모음(display: flex; transition: transform 400ms ease; /*부드러운 이동*/ will-change: transform;)
+
+*개별()
+
+- 슬라이드 개별 내부()
+
+- 개별 박스(hover 시 .slide-txt 표시)
+
+- 설명 박스()
+
+- 버튼(hover 애니메이션 없음)
+
+------------------------------------------------------------------------------
+
+[ 🪄 MAIN - 🎨 DESIGN 섹션 (#DESIGN) ]
+
+1. 요소: 섹션/이너(공통), 리스트, 카드, 이미지
+
+2. 크기·여백
+
+- 리스트(3열 Grid, gap 50px)
+
+- 카드(border-radius:20px)
+
+- 이미지(width:100%; height:100%)
+
+3. 색상·폰트
+
+- 리스트()
+
+- 카드(배경 #bee1f0)
+
+- 이미지()
+
+4. 레이아웃
+
+- 리스트(display:grid)
+
+- 카드(중앙정렬)
+
+- 이미지()
+
+5. 기타
+
+- 리스트(모바일 1열)
+
+- 카드(hover 시 그림자)
+
+- 이미지(hover 시 scale(1.1))
+
+------------------------------------------------------------------------------
+
+[ 🪄 MAIN - 💌 CONTACT 섹션 (#CONTACT) ]
+
+1. 요소: 섹션/이너(공통), 전체, 텍스트 박스, 문장, 이메일, 설명, 버튼, 이미지박스, 이미지
+
+2. 크기·여백
+
+- 전체(display:flex; align item: center; gap:10%)
+
+- 텍스트 박스(flex:0 0 50%; height:400px)
+
+- 문장(font-size:1.5rem; margin-bottom:40px)
+
+- 이메일(font-size:2.5rem; font-weight:900)
+
+- 설명(font-size:1.1rem; margin-bottom:24px)
+
+- 버튼(padding:10px 20px)
+
+- 이미지박스(flex:0 0 40%; height:400px; border-radius:100px 0 100px 0)
+
+- 이미지(  width: 100%; height: 100%; object-fit: cover;)
+
+3. 색상·폰트
+
+- 전체(배경 #fff)
+
+- 텍스트 박스()
+
+- 문장()
+
+- 이메일()
+
+- 설명()
+
+- 버튼(테두리·글자 #f1accb, hover 반전)
+
+- 이미지박스(배경 tan)
+
+- 이미지()
+
+4. 레이아웃
+
+- 전체()
+
+- 텍스트 박스()
+
+- 문장()
+
+- 이메일()
+
+- 설명()
+
+- 버튼()
+
+- 이미지박스(hover 시 scale(1.1))
+
+- 이미지()
+
+5. 기타
+
+- 전체(모바일 세로)
+
+- 텍스트 박스()
+
+- 문장()
+
+- 이메일()
+
+- 설명()
+
+- 버튼()
+
+- 이미지박스(모바일 숨김)
+
+- 이미지()
+
+------------------------------------------------------------------------------
+
+[ 🪄 MAIN - 🦶 FOOTER ]
+
+1. 요소: 겉표지(footer), 이너, TOP 버튼
+
+2. 크기·여백
+
+- 겉표지(padding:16px 0)
+
+- 이너(max-width:700px; text-align:center; padding:0 24px)
+
+- TOP 버튼(50×50px (모바일40×40))
+
+3. 색상·폰트
+
+- 겉표지(font-size:0.8rem)
+
+- 이너()
+
+- TOP 버튼(배경 #f1accb, 글자 #3a3a3a)
+
+4. 레이아웃
+
+- 겉표지(display:flex; justify-content:center;)
+
+- 이너()
+
+- TOP 버튼(position:fixed; right:100px; bottom:70px)
+
+
+5. 기타
+
+- 겉표지()
+
+- 이너()
+
+- TOP 버튼(원형, 그림자, hover 없음)
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1006 @@
+@font-face {
+  font-family: "MyNotoSans";
+  src: url("../fonts/noto-sans-kr-korean-400-normal.woff2") format("woff2"),
+    url("../fonts/noto-sans-kr-korean-400-normal.woff") format("woff");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("../fonts/Poppins-Bold.woff2") format("woff2");
+  src: url("../fonts/Poppins-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Poppins-Thin";
+  src: url("../fonts/Poppins-Thin.woff2") format("woff2");
+  src: url("../fonts/Poppins-Thin.woff") format("woff");
+}
+@font-face {
+  font-family: "Poppins-Medium";
+  src: url("../fonts/Poppins-Medium.woff2") format("woff2");
+  src: url("../fonts/Poppins-Medium.woff") format("woff");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* 모든 요소에 적용*/
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  color: #3c3c3c;
+  /* background: #fff;*/
+  font-family: "MyNotoSans", sans-serif;
+  line-height: 1.5;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  padding: 40px 0;
+  /*overflow: hidden; 이거 쓰면 햄버거 메뉴 펼쳣을 때 안 나옴 */
+  transition: all 0.3s ease;
+
+  /*border-radius: 0px 0px 50px 50px;*/
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 양쪽 끝 */
+}
+
+.header-logo {
+  font-size: 1.2rem;
+  font-family: Poppins-Medium;
+  /*color: #f1accb;*/
+}
+
+.header-logo a {
+  text-decoration: none;
+  color: #3a3a3a;
+}
+
+@media (max-width: 768px) {
+  .header-logo {
+    font-size: 1rem;
+  }
+}
+
+.header.scrolled {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 24px;
+    height: 18px;
+    border: 0;
+    background: none;
+    position: relative;
+    z-index: 9999;
+    top: 0px;
+    left: 8px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 100%;
+    height: 2px;
+    background-color: #3a3a3a;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}
+
+.header-nav {
+  font-size: 0.9rem;
+  display: block;
+}
+
+.header-gnb {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  font-family: Poppins-Medium;
+  font-size: 1.1rem;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #3a3a3a;
+  opacity: 0;
+}
+
+/* active된 li에 점 표시 */
+.nav-link.active::before {
+  opacity: 1;
+}
+
+/*.nav-link.active::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background-color: #3a3a3a;
+  border-radius: 50%;
+}*/
+
+@media (max-width: 768px) {
+  .nav-link.active::before {
+    content: none; /* ✅ 점(가상요소) 자체를 안 만듦 */
+  }
+}
+
+.header-gnb li a {
+  color: #3c3c3c;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+    position: fixed; /*position:absolute는 헤더 기준이라 안됨*/
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: #fff;
+    padding: 20px 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-nav.active {
+    display: block;
+  }
+
+  .header-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: absolute;
+    left: 23px;
+    top: 100px;
+  }
+}
+
+/* header END*/
+.section-f {
+  padding: 180px 0px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .section-f {
+    padding: 100px 0px;
+  }
+}
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h2 {
+  font-size: 2.8rem;
+  color: #3a3a3a;
+  font-family: Poppins-Medium;
+  margin-bottom: 64px;
+}
+
+.reveal {
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.9s ease;
+}
+
+.reveal.up {
+  transform: translateY(100px);
+}
+
+.reveal.rotate {
+  transform: rotateY(90deg);
+}
+
+.reveal.left {
+  transform: translateX(-100px);
+}
+
+.reveal.right {
+  transform: translateX(100px);
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+/* 공통 END */
+
+#HOME {
+  width: 100%;
+  padding-top: 150px;
+  padding: 300px 0;
+  /*background: linear-gradient(135deg, #f7f2e9 0%, #e8d8c3 100%);*/
+
+  background: radial-gradient(circle at 20% 30%, #f4a4b7 0%, transparent 60%),
+    radial-gradient(circle at 70% 40%, #c2dffa 0%, transparent 30%),
+    radial-gradient(circle at 40% 80%, #c4eccd 0%, transparent 20%), #ffffff;
+}
+
+@media (max-width: 768px) {
+  #HOME {
+    padding: 100px 0;
+  }
+}
+#HOME .section-inner {
+  width: 100%;
+}
+
+.hero-box {
+  max-width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 1023px) {
+  .hero-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px 24px;
+    overflow: visible;
+  }
+}
+
+.hero-title {
+  font-size: 5.5rem;
+  color: #3a3a3a;
+  font-family: Poppins-Bold;
+  /* 내부 세부 요소들은 마진을 사용 */
+  line-height: 1.3;
+}
+
+@media (max-width: 1023px) {
+  .hero-title {
+    font-size: 3.2rem;
+  }
+}
+
+.hero-txt {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 2;
+  margin-top: 40px;
+}
+
+/* HOME END */
+
+#ABOUT {
+  background: #fff;
+}
+.half-box {
+  display: flex;
+  align-items: center; /* 부모높이랑 상관없이 늘 가운데에 배치 */
+  /*justify-content: space-between;*/
+  gap: 10%;
+}
+
+@media (max-width: 768px) {
+  .half-box {
+    flex-direction: column; /* 세로 배치로 전환 */
+  }
+
+  .image-box {
+    margin-bottom: 64px;
+  }
+}
+
+.image-box {
+  flex: 0 0 40%;
+  aspect-ratio: 1/1; /*항상 정사각형 */
+  background-color: #fff;
+
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+.image-box img {
+  display: block;
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.image-box img:hover {
+  transform: translateY(-24px);
+}
+@media (max-width: 768px) {
+  .image-box {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+.image-box-txt1 {
+  top: 50px;
+  left: 10px;
+}
+.image-box-txt2 {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 30px;
+}
+.image-box-txt3 {
+  bottom: 0;
+  left: 15%;
+}
+
+.txt-box {
+  flex: 0 0 50%;
+  /*height: 400px;*/
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .txt-box {
+    font-size: 0.9rem;
+  }
+}
+
+.txt-box-header {
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #7b73f1;
+}
+
+.txt-box-p {
+  margin-bottom: 24px;
+}
+
+.btn {
+  display: inline-block; /*버튼은 보통 문자랑 같이 쓰여서 텍스트어라인을 받기위해*/
+  max-width: 100%;
+  padding-right: 10px;
+  margin-top: 20px;
+
+  background: white;
+  color: #7b73f1;
+  font-size: 1.125rem; /*18px*/
+
+  text-decoration: none;
+}
+
+.btn:hover {
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.btn-arrow-right {
+  position: relative;
+}
+
+.btn-arrow-right::after {
+  content: "\f105"; /* \f061 */
+  font-family: "font Awesome 5 free";
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-47%);
+  right: -0.8em;
+
+  font-weight: 900;
+}
+
+.flow-wrapper {
+  overflow: hidden; /*얘가 잇음 둥근모서리가 안 먹음 근데 없으면 옆으로 다 튀어나옴*/
+  width: 100%;
+  position: relative; /* 나중에 버튼이나 다른 요소의 기준점이 되어줄 수 있음*/
+}
+
+.slide-list {
+  width: max-content; /*부모말고 자식 너비에 맞춤*/
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  animation: flowSlide 50s linear /*일정한속도*/ infinite;
+  /*이미지가 개별적으로 움직이는 게 아니라 전체줄이 흘러가는 구조임*/
+  padding-top: 80px;
+}
+
+@keyframes flowSlide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.slide-item {
+  flex: 0 0 auto; /*고정된 위드스 너비만큼만 가져가라*/
+  width: 100px;
+  margin-right: 50px;
+  list-style: none;
+  /*background-color: #c2dffa;*/
+}
+
+.slide-item img {
+  display: block;
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  /*border-radius: 20px;*/
+}
+
+/* ABOUT END*/
+
+.skill-box {
+  width: 100%;
+  max-width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .skill-box {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.skill-flex {
+  margin-bottom: 0;
+
+  box-shadow: 0 0.5em 1em -0.5em rgba(0, 0, 0, 0.25),
+    0 0.06em 0.2em rgba(0, 0, 0, 0.18);
+
+  transition: all 0.2s ease;
+}
+
+.skill-flex:hover {
+  scale: 1.1;
+}
+
+.skill-flex {
+  list-style: none;
+  margin-bottom: 40px;
+
+  display: flex;
+  align-items: center;
+
+  width: auto;
+
+  padding: 20px 0;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.5),
+    rgba(247, 242, 233, 0.8)
+  );
+  border-radius: 10px;
+}
+
+.skill-box-img {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100px;
+  height: 100px;
+  padding: 0 14px;
+
+  position: relative;
+  font-weight: bold;
+}
+.skill-box-img::after {
+  content: "";
+  position: absolute;
+
+  right: 0;
+  width: 1px;
+  height: 50%;
+  background: rgba(60, 60, 60, 0.1);
+}
+
+.skill-flex .label-txt {
+  flex: 5;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .label-txt {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skill-flex .label {
+    display: none;
+  }
+  .skill-box-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* SKILL END */
+
+#PORT {
+  background: #f8f8f8;
+}
+
+.tablist {
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 8px;
+  background-color: #3a3a3a;
+  border-radius: 10px;
+  /*border-left: 1px solid #5c3b28;
+  border-right: 1px solid #5c3b28;*/
+}
+
+.tab {
+  flex: 1 1 0; /*남은 공간을 모두 균등하게 & 0은 시작 크기도 같게 */
+  border: none;
+  background-color: #3a3a3a;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 14px 0;
+  border-radius: 10px;
+} /* 클릭하면 색깔 바뀌는 것도 구현해야함 */
+
+/* 선택된 탭 배경색 바꾸기*/
+.tab.active {
+  background-color: #7b73f1;
+}
+
+.grid-boxs {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  /*gap: 24px 24px; */
+  /*margin: 0 0 24px 0;*/
+  list-style: none;
+  overflow: hidden;
+}
+.flex-box {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .flex-box {
+    gap: 40px;
+  }
+}
+
+.flex-box li {
+  flex: 1 1 0; /*부모에 너비주고 자식은 너비를 똑같이 나눠가짐*/
+  list-style: none;
+  padding: 0 24px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.flex-box li:nth-child(odd) {
+  background-color: #f8f8f8;
+} /*홀수 li는 배경색을 섹션이랑 맞춰서 감춤 */
+
+.flex-box li:nth-child(odd) img {
+  transition: transform 0.4s ease;
+}
+
+/*.port-after { //클릭버튼인데 고민 중 //
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.port-after::after {
+  position: absolute;
+  content: "CLICK";
+  width: 60px;
+  height: 60px;
+  top: 5%;
+  right: 150px;
+  border-radius: 50%;
+  background-color: #36454f;
+  color: #fff;
+  line-height: 60px;
+}
+
+@media (max-width: 768px) {
+  .port-after::after {
+    right: 65px;
+  }
+}*/
+
+.port-img-wrapper {
+  /*li인데 이미지박스 3등분 == 썸네일 이미지&링크 연동 */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #c2dffa;
+  transition: transform 0.4s ease-in-out;
+}
+
+.port-img-wrapper:hover {
+  transform: scale(1.1);
+}
+
+.port-img-box-long {
+  flex: 1 1 0;
+  width: 100%;
+  height: 100%;
+  /*박스마다 너비,높이를 줘야 이미지가 꽉찬다*/
+}
+
+.port-img-box-long img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.port-img-box-short {
+  width: 100%;
+  height: 100%;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.port-img-box-short-1 {
+  flex: 1;
+  aspect-ratio: 1 / 1;
+}
+
+.port-img-box-short-2 {
+  flex: 1;
+  aspect-ratio: 1 / 1;
+}
+
+.port-img-box-short-1 img,
+.port-img-box-short-2 img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.grid-boxs a {
+  text-decoration: none;
+  color: #3a3a3a;
+  /*flex: 1 1 0;*/
+}
+
+@media (max-width: 768px) {
+  .flex-box {
+    flex-direction: column;
+  }
+
+  .flex-box li {
+    flex: 1 1 auto;
+    /*flex: 1 1 0 → "무조건 균등 분배"
+     flex: 1 1 auto → "내용 길이에 따라 유연 분배"*/
+    width: 100%;
+    height: 500px;
+  }
+
+  .tablist {
+    max-width: 100%;
+  }
+}
+
+.port-flex-boxs-li {
+  /*오른쪽 li */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.port-flex-boxs-li p {
+  margin-top: -24px;
+  font-size: 1rem;
+}
+
+/* 숨김 상태 (필터 시) */
+.is-hidden {
+  display: none !important;
+}
+/* PORT END */
+
+#DESIGN .tablist {
+  background-color: #fff;
+}
+
+#DESIGN .tab {
+  background-color: #fff;
+}
+
+#DESIGN .tab.active {
+  background-color: #fdfaf7;
+}
+.design-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  .design-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+.design-box-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: auto;
+  background-color: #fff;
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  transition: all 0.4s ease;
+
+  padding: 24px 24px;
+}
+
+.design-box-flex:hover {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.design-box-column img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-bottom: 24px;
+
+  transition: transform 0.4s ease;
+}
+
+.design-box-column h3 {
+  text-align: center;
+  font-size: 1rem;
+}
+
+/*.design-box li img:hover {
+  transform: scale(1.1);
+}*/
+/*DESIGN END*/
+
+#CONTACT {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+#CONTACT h2 {
+  color: #fff;
+}
+
+.half-box2 {
+  display: flex;
+  align-items: center;
+  /*justify-content: space-between;*/
+  gap: 10%;
+}
+
+@media (max-width: 768px) {
+  .half-box2 {
+    flex-direction: column; /* 세로 배치로 전환 */
+  }
+  .txt-box2 {
+    margin-bottom: 64px;
+  }
+}
+
+.txt-box2 {
+  position: relative;
+  width: 100%;
+  flex: 0 0 50%;
+  /*background: pink;*/
+  height: 400px;
+}
+.txt-box2 .txt-box2-text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.txt-box2 .txt-box-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 24px;
+}
+.txt-box2 .txt-box2-text2 {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+.txt-box2 a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.1rem;
+  background: white;
+  color: #7b73f1;
+  border: 2px solid #7b73f1;
+  padding: 10px 20px;
+  transition: 0.2s;
+  text-align: center;
+}
+.txt-box2 a:hover {
+  background: #7b73f1;
+  color: white;
+}
+
+.img-box2 {
+  flex: 0 0 40%;
+  background: #fdfaf7;
+  height: 400px;
+  transition: transform 0.4s ease;
+  border-radius: 150px 0 150px 0;
+  overflow: hidden;
+}
+
+.img-box2:hover {
+  transform: scale(1.1);
+}
+.img-box2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .img-box2 {
+    display: none;
+  }
+}
+
+/* CONTACT END */
+
+footer {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 32px 0;
+
+  font-size: 0.8rem;
+
+  position: relative;
+  background-color: black;
+  color: #fff;
+}
+
+.footer-inner {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 24px;
+}
+.top {
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: #7b73f1;
+
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 50%;
+  color: #fff;
+
+  text-align: center;
+  font-family: Poppins-Thin;
+
+  position: fixed;
+  right: 100px;
+  bottom: 80px;
+
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .top {
+    width: 40px;
+    height: 40px;
+    right: 20px;
+    bottom: 85px;
+  }
+}
