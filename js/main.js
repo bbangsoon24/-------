@@ -1,6 +1,5 @@
-// =========================
-// 1) 탭 필터링 메뉴
-// =========================
+//1) 탭 필터링 메뉴
+
 const tabs = document.querySelectorAll(".tablist .tab");
 const cards = document.querySelectorAll(".grid-boxs > .flex-box > li");
 
