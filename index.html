@@ -14,7 +14,7 @@
     />
     <meta
       name="description"
-      content="안녕하세요! 프론트엔드 디자이너 입사지원자 강혜경입니다. 프로토타입 포트폴리오 웹사이트입니다."
+      content="안녕하세요! UI/UX, 퍼블리셔 입사지원자 강혜경입니다. 프로토타입 포트폴리오 웹사이트입니다."
     />
 
     <link rel="stylesheet" href="css/main.css" />
@@ -75,7 +75,7 @@
           <h2>ABOUT ME</h2>
           <div class="half-box">
             <div class="image-box">
-              <img src="./images/ME.png" />
+              <img src="./images/me.jpg" />
             </div>
             <!-- /.image-box -->
 
@@ -107,7 +107,13 @@
               </p>
               <p class="txt-box-p">제 포트폴리오를 봐주셔서 감사합니다.</p>
               <div class="reveal left">
-                <a class="btn btn-arrow-right" href="#">이력서 더보기</a>
+                <a
+                  class="btn btn-arrow-right"
+                  href="./files/강혜경_이력서_자기소개서_2차_수정본.pdf"
+                  download
+                  target="_blank"
+                  >이력서 더보기</a
+                >
               </div>
             </div>
             <!-- /.txt-box -->
@@ -169,11 +175,9 @@
               </li>
             </ul>
           </div>
-          <!-- skill 무한루프 박스 // 이너 안에 잇음 폭이 좁아짐-->
+          <!-- skill 무한루프 박스 // 이너 안에 있어서 폭이 section-inner에 맞춰짐-->
         </div>
         <!-- section-inner-->
-
-        <!-- 스킬 띠 -->
       </section>
 
       <section id="PORT" class="section-f">
@@ -196,7 +200,7 @@
               aria-selected="false"
               data-filter="b"
             >
-              이웃집 통통이(작업중)
+              이웃집 통통이
             </button>
             <button
               class="tab"
@@ -204,7 +208,7 @@
               aria-selected="false"
               data-filter="c"
             >
-              작업예정
+              포트폴리오 메인 페이지
             </button>
           </div>
           <!--탭 버튼 end-->
@@ -236,18 +240,35 @@
               </li>
 
               <li data-shop="hanwha" class="port-flex-boxs-li">
-                <h3>포트폴리오1 (클론코딩, 반응형웹 적용)</h3>
+                <h3>프로젝트명: 한화이글스(메인/로그인)</h3>
 
-                <h4>작업영역</h4>
-                <p>메인페이지, 로그인페이지</p>
-                <h4>사용툴</h4>
-                <p>Figma, HTML5, CSS3, VsCode, JavaScript</p>
-                <h4>제작기간</h4>
-                <p>3일</p>
-                <h4>개인참여도</h4>
+                <h4>프로젝트 개요</h4>
+                <p>
+                  프로야구 구단 ‘한화이글스’ 브랜드를 기반으로 실제 서비스
+                  구조를 참고해 메인 페이지와 로그인 페이지를 설계·퍼블리싱한
+                  프로젝트입니다.
+                </p>
+                <h4>역할 및 작업 범위</h4>
+                <p>
+                  - 2Depth 네비게이션 구조 설계 및 마우스오버 인터랙션 구현<br />
+                  - 비디오 기반 히어로 섹션 구성<br />
+                  - flex·grid를 조합한 컴포넌트 기반 퍼블리싱 구조 설계<br />
+                  - JS 기반 탭 필터링 기능(data-filter) 구현 (스파이더샵 /
+                  형지샵)<br />
+                  - 무한루프 슬라이드(선수 이미지) 순수 CSS 애니메이션으로
+                  구현<br />
+                  - 로그인 페이지 UI 단일 파일 구조 분리(css/login.css),
+                  입력필드 UX 개선<br />
+                  - 반응형 레이아웃(PC·Mobile) 제작<br />
+                </p>
+                <h4>기술 스택</h4>
+                <p>
+                  HTML5, CSS3(Flex/Grid/Animation), JavaScript, Figma, VSCode
+                </p>
+                <h4>제작 기간</h4>
+                <p>7일</p>
+                <h4>참여도</h4>
                 <p>100%</p>
-                <h4>참고사항</h4>
-                <p>TAP메뉴 사용</p>
               </li>
             </ul>
 
@@ -269,7 +290,7 @@
                   <div class="port-img-box-short-2">
                     <div class="port-img-box-long">
                       <a href="./이웃집통통이/index.html" target="_blank"
-                        ><img src="./images" alt="프로필"
+                        ><img src="./images/tongtong-slide.jpg" alt="프로필"
                       /></a>
                     </div>
                   </div>
@@ -278,40 +299,56 @@
               </li>
 
               <li data-shop="b" class="port-flex-boxs-li">
-                <h3>포트폴리오2 (반응형웹 적용)</h3>
+                <h3>프로젝트명: 이웃집통통이</h3>
 
-                <h4>작업영역</h4>
-                <p>메인페이지, 택배 폼(주문/배송)</p>
-                <h4>사용툴</h4>
-                <p>Figma, HTML5, CSS3, VsCode, JavaScript, jquery</p>
-                <h4>제작기간</h4>
-                <p>4일</p>
-                <h4>개인참여도</h4>
+                <h4>프로젝트 개요</h4>
+                <p>
+                  베이커리 브랜드 ‘이웃집 통통이’를 실제 웹사이트로 모델링 하여
+                  브랜드 톤앤매너 분석 → 정보 구조 설계 → UI 컴포넌트 퍼블리싱을
+                  직접 수행한 프로젝트입니다.
+                </p>
+                <h4>역할 및 작업 범위</h4>
+                <p>
+                  - 헤더 2단 구조 설계 및 hover 인터랙션 구현<br />
+                  - hero 영역에 브랜드 이미지를 강조하는 시각 구조 설계<br />
+                  - News&Notice, 신메뉴 소개, 주문링크, 매장찾기 map-box 등
+                  섹션별 UI 컴포넌트 직접 제작<br />
+                  - 제품 박스 hover 시 상세 설명 오버레이 인터랙션 구현<br />
+                  - 이미지 레이어 + gradient overlay를 활용한 hire-box 비주얼
+                  효과 구현<br />
+                  - store-search(매장 찾기) 폼 UI 제작 및 검색 UX 구조 구성<br />
+                </p>
+                <h4>기술 스택</h4>
+                <p>
+                  HTML5, CSS3,jQuery(슬라이드) JavaScript(헤더 스크롤, 햄버거
+                  메뉴), Figma, VSCode
+                </p>
+                <h4>제작 기간</h4>
+                <p>5일</p>
+                <h4>참여도</h4>
                 <p>100%</p>
-                <h4>참고사항</h4>
-                <p>?</p>
               </li>
             </ul>
 
-            <!-- 미정(c) -->
+            <!-- 포트폴리오 메인 페이지(c) -->
             <ul class="flex-box">
               <li data-shop="c" class="port-after port-img-wrapper">
                 <div class="port-img-box-long">
-                  <a href="../한화이글스/index.html" target="_blank"
-                    ><img src="./images/한화썸네일2.jpg" alt="프로필"
+                  <a href=""
+                    ><img src="./images/main-first.png" alt="프로필"
                   /></a>
                 </div>
                 <!--왼쪽에 길게 // 기존 거 사용-->
                 <div class="port-img-box-short">
                   <div class="port-img-box-short-1">
-                    <a href="../한화이글스/index.html" target="_blank"
-                      ><img src="./images/port-hanwha-main.jpg" alt="프로필"
+                    <a href=""
+                      ><img src="./images/main-second.png" alt="프로필"
                     /></a>
                   </div>
                   <div class="port-img-box-short-2">
                     <div class="port-img-box-long">
-                      <a href="../한화이글스/index.html" target="_blank"
-                        ><img src="./images/port-hanwha-login.jpg" alt="프로필"
+                      <a href=""
+                        ><img src="./images/main-third.png" alt="프로필"
                       /></a>
                     </div>
                   </div>
@@ -320,18 +357,25 @@
               </li>
 
               <li data-shop="c" class="port-flex-boxs-li">
-                <h3>포트폴리오1(클론코딩)</h3>
+                <h3>프로젝트명: 포트폴리오 메인 페이지</h3>
 
-                <h4>작업영역</h4>
-                <p>메인페이지, 로그인페이지</p>
-                <h4>사용툴</h4>
-                <p>Figma, HTML5, CSS3, VsCode, JavaScript</p>
-                <h4>제작기간</h4>
-                <p>3일</p>
-                <h4>개인참여도</h4>
+                <h4>프로젝트 개요</h4>
+                <p>
+                  포트폴리오 사이트 메인 페이지의 아키텍처 설계 및 퍼블리싱
+                  작업을 수행한 프로젝트입니다.
+                </p>
+                <h4>역할 및 작업 범위</h4>
+                <p>
+                  - 전체 화면 구조 설계(스케치 → HTML/CSS 구현)<br />
+                  - 반응형(Flex/Grid) + 모바일 우선 레이아웃 적용<br />
+                  - 슬라이드(css)·토글·탭 등 UI 인터랙션 구현(JavaScript)
+                </p>
+                <h4>기술 스택</h4>
+                <p>HTML5, CSS3, JavaScript, VSCode</p>
+                <h4>제작 기간</h4>
+                <p>6일</p>
+                <h4>참여도</h4>
                 <p>100%</p>
-                <h4>참고사항</h4>
-                <p>TAP메뉴 사용</p>
               </li>
             </ul>
           </div>
@@ -434,134 +478,6 @@
       </div>
       <a href="#" class="top"> TOP</a>
     </footer>
-    <script>
-      const tabs = document.querySelectorAll(".tablist .tab"); //모든 탭 버튼(스파이더샵, 형지샵)
-      const cards = document.querySelectorAll(".grid-boxs > .flex-box > li"); //모든 상품 카드(li)
-
-      //(1) 탭 상태 바꾸기
-      function applyFilter(target) {
-        /* target 은 “지금 클릭한 탭의 이름(hanwha, b, c)”이에요.
-           이 함수는 “그 탭에 맞게 화면을 바꿔주는 역할”을 합니다.*/
-        tabs.forEach((tab) => {
-          //탭메뉴들을 하나씩 돌리면서
-          const active = tab.dataset.filter === target;
-          //HTML에 있는 data-filter= 값을 가져와서 클릭된 탭과 이름이 같은지 확인 (true/false)
-          tab.classList.toggle("active", active);
-          //같으면 .active 클래스 붙이고, 다르면 떼기
-          tab.setAttribute("aria-selected", String(active));
-          //접근성용: 선택 여부(true/false)를 표시
-        });
-
-        //(2) 카드 필터링
-        cards.forEach((card) => {
-          //상품 카드를 하나씩 돌면서
-          const match = card.dataset.shop === target;
-          //각 카드의 소속(shop) 값을 가져와서 (data-shop=) 클릭된 탭의 이름과 같은지 확인
-          card.classList.toggle("is-hidden", !match);
-          //같지 않으면(is-hidden = true) 숨기기
-        });
-      }
-
-      //(3)초기상태 세팅: 첫 탭 활성화
-      const initial =
-        document.querySelector(".tab.active")?.dataset.filter || "hanwha";
-      applyFilter(initial);
-
-      // 클릭 이벤트
-      tabs.forEach(
-        (tab) =>
-          tab.addEventListener("click", () => applyFilter(tab.dataset.filter))
-        //버튼 클릭을 감지 - 클릭한 버튼의 data-filter 값 읽기 (hanwha/b/c) - 클릭된 탭 이름을 전달해서 화면 변경 실행
-      );
-    </script>
-    <!--tap 메뉴-->
-    <script>
-      const header = document.querySelector(".header");
-
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 80) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
-        }
-      });
-    </script>
-    <!-- 헤더 메뉴 색상 변화-->
-
-    <script>
-      const reveals = document.querySelectorAll(".reveal");
-      const observer = new IntersectionObserver(
-        (entries, obs) => {
-          //(콜백함수, 감시 조건 )
-          entries.forEach((entry) => {
-            //관찰 중 변화가 생길 때 실행될 콜백 함수
-            if (entry.isIntersecting) {
-              entry.target.classList.add("show");
-              obs.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.05,
-          rootMargin: "0px 0px 0% 0%",
-        }
-      );
-
-      //관찰시작
-      reveals.forEach((el) => observer.observe(el));
-    </script>
-    <!--스크롤 트리거 효과-->
-
-    <script>
-      const btn = document.querySelector(".hamburger");
-      const nav = document.querySelector(".header-nav");
-
-      btn.addEventListener("click", () => {
-        const open = !nav.classList.contains("active");
-        nav.classList.toggle("active", open);
-        btn.classList.toggle("active", open);
-        btn.setAttribute("aria-expanded", open);
-        btn.setAttribute("aria-label", open ? "hidden" : "");
-      });
-    </script>
-    <!-- 햄버거 메뉴 오픈/클로즈-->
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const navlinks = document.querySelectorAll(".nav-link");
-        const sections = document.querySelectorAll("main section");
-
-        // 클릭 시 active
-        navlinks.forEach((linkLi) => {
-          linkLi.addEventListener("click", () => {
-            //클릭되면 실행하는 거라서  linkLi는 자연스레 클릭된 자신이 됨
-            navlinks.forEach((i) => i.classList.remove("active"));
-            linkLi.classList.add("active");
-          });
-        });
-
-        console.log("sections length:", sections.length); // 여기서 0이면 아직 문제인 거
-
-        // 스크롤 시 active 변경
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const id = entry.target.getAttribute("id");
-                navlinks.forEach((li) => {
-                  const a = li.querySelector("a");
-                  const href = a.getAttribute("href").replace("#", "");
-                  li.classList.toggle("active", href === id);
-                });
-              }
-            });
-          },
-          { threshold: 0.3 }
-        );
-
-        sections.forEach((section) => observer.observe(section));
-      });
-    </script>
-    <!--점 // 스크롤시 점 이동-->
+    <script src="js/main.js"></script>
   </body>
 </html>

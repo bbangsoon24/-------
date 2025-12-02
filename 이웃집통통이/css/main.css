@@ -8,16 +8,6 @@
   src: url("../fonts/Gaegu-Regular.woff") format("woff");
   src: url("../fonts/Gaegu-Regular.woff2") format("woff2");
 }
-/*@font-face {
-  font-family: "Poppins-Thin";
-  src: url("../fonts/Poppins-Thin.woff2") format("woff2");
-  src: url("../fonts/Poppins-Thin.woff") format("woff");
-}
-@font-face {
-  font-family: "Poppins-Medium";
-  src: url("../fonts/Poppins-Medium.woff2") format("woff2");
-  src: url("../fonts/Poppins-Medium.woff") format("woff");
-}*/
 
 * {
   padding: 0;
@@ -27,6 +17,11 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 body {
   color: #4b3b2a;

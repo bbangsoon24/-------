@@ -28,6 +28,11 @@
 *::after {
   box-sizing: border-box;
 }
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 body {
   color: #3c3c3c;
   /* background: #fff;*/
@@ -47,12 +52,14 @@ header {
   left: 0;
   right: 0;
   z-index: 1000;
-
   padding: 40px 0;
-  /*overflow: hidden; 이거 쓰면 햄버거 메뉴 펼쳣을 때 안 나옴 */
   transition: all 0.3s ease;
+}
 
-  /*border-radius: 0px 0px 50px 50px;*/
+.header.scrolled {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header-inner {
@@ -62,13 +69,12 @@ header {
   padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* 양쪽 끝 */
+  justify-content: space-between;
 }
 
 .header-logo {
   font-size: 1.2rem;
   font-family: Poppins-Medium;
-  /*color: #f1accb;*/
 }
 
 .header-logo a {
@@ -80,12 +86,6 @@ header {
   .header-logo {
     font-size: 1rem;
   }
-}
-
-.header.scrolled {
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hamburger {
@@ -164,21 +164,9 @@ header {
   opacity: 1;
 }
 
-/*.nav-link.active::before {
-  content: "";
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 5px;
-  height: 5px;
-  background-color: #3a3a3a;
-  border-radius: 50%;
-}*/
-
 @media (max-width: 768px) {
   .nav-link.active::before {
-    content: none; /* ✅ 점(가상요소) 자체를 안 만듦 */
+    content: none; /* 점(가상요소) 자체를 안 만듦 */
   }
 }
 
@@ -267,7 +255,6 @@ h2 {
 
 #HOME {
   width: 100%;
-  padding-top: 150px;
   padding: 300px 0;
   /*background: linear-gradient(135deg, #f7f2e9 0%, #e8d8c3 100%);*/
 
@@ -361,9 +348,10 @@ h2 {
 }
 .image-box img {
   display: block;
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  border-radius: 50%;
   margin-bottom: 20px;
   transition: transform 0.4s ease-in-out;
 }
@@ -786,11 +774,14 @@ h2 {
   justify-content: space-evenly;
 }
 
-.port-flex-boxs-li p {
-  margin-top: -24px;
+.port-flex-boxs-li h4 {
   font-size: 1rem;
 }
 
+.port-flex-boxs-li p {
+  font-size: 0.9rem;
+  margin-top: -16px;
+}
 /* 숨김 상태 (필터 시) */
 .is-hidden {
   display: none !important;
